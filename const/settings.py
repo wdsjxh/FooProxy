@@ -16,7 +16,7 @@ builtin_crawl_urls = {
     #count 表示爬取数量
     'nyloner':{
         'url':'https://www.nyloner.cn/proxy',
-        'count':600,
+        'count':1000,
     },
     #其需要的追加参数在下面设置,详见_66ip_params
     '66ip':{
@@ -50,6 +50,9 @@ _66ip_params = {
     'proxytype': 2,
     'api': '66ip',
 }
+
+
+
 
 #伪造请求头部浏览器
 user_agents = [

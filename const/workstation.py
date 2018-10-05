@@ -5,12 +5,15 @@
     @email   : yooleak@outlook.com
     @date    : 2018-10-04
 """
-from apiserver  import app
-from collector  import Collector
-from validator  import Validator
-from detector   import Detector
+
+from APIserver.apiserver import app
+from Collector.collector import Collector
+from Validator.validator import Validator
+from Detector.detector import Detector
+from Helper.dbhelper import Database
 from multiprocessing import Pool
 from multiprocessing import Manager
+from DB.settings import _DB_SETTINGS,_TABLE
 
 class Workstation(object):
 
@@ -18,7 +21,11 @@ class Workstation(object):
         self.collector = Collector()
         self.validator = Validator()
         self.detector  = Detector()
+        self.database  = Database(_DB_SETTINGS)
         self.proxyList = Manager().list()
+
+    def preparing(self):
+        self.database.make_preparation(_TABLE.values())
 
     def run_validator(self,proxyList):
         self.validator.run(proxyList)
@@ -30,6 +37,7 @@ class Workstation(object):
         self.detector.run()
 
     def work(self):
+        self.preparing()
         pool = Pool(4)
         func = [self.run_collector,self.run_validator,self.run_detector]
         results = [pool.apply_async(fun,args=(self.proxyList,)) for fun in func]

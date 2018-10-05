@@ -6,7 +6,7 @@
     @date    : 2018-10-04
 """
 
-from workstation import Workstation
+from const.workstation import Workstation
 
 if __name__ == '__main__' :
     workstation = Workstation()

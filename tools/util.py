@@ -10,7 +10,7 @@ import base64
 import hashlib
 import requests
 
-from settings import headers
+from const.settings import headers
 
 
 
