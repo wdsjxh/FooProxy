@@ -9,9 +9,37 @@ import json
 import base64
 import hashlib
 import requests
-
+from const.settings import IP_check_url
 from const.settings import headers
+from bs4 import BeautifulSoup as bs
 
+def time_to_date(timestamp):
+    """
+    时间戳转换为日期
+    :param timestamp : 时间戳，int类型，如：1537535021
+    :return:转换结果日期，格式： 年-月-日 时:分:秒
+    """
+    timearr = time.localtime(timestamp)
+    otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timearr)
+    return  otherStyleTime
+
+def get_ip_addr(ip):
+    """
+    获取ip的地址信息
+    :param ip : IP地址
+    :return: 地址信息
+    """
+    try:
+        resp = requests.get(IP_check_url+ip,headers=headers)
+        rep = bs(resp.text,'lxml')
+        try:
+            res = rep('code')[1].text
+        except Exception as e:
+            return None
+        return res
+    except Exception as e:
+        print(e)
+        return None
 
 
 def get_cookies(url, headers=headers, params={},proxies={}):

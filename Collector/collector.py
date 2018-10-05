@@ -10,7 +10,7 @@ from tools.threads import CrawlThread
 from Collector.crawlers import builtin_crawlers
 from custom.custom import  my_crawlers
 from inspect    import isfunction
-from config       import COLLECT_TIME_GAP
+from config.config       import COLLECT_TIME_GAP
 
 class Collector(object):
     def __init__(self):

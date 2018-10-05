@@ -7,10 +7,12 @@
 """
 import pymysql
 import pymongo
-from inspect import isfunction
-from Helper.sqlhelper import use_db,save
-from Helper.sqlhelper import mysql_db_preparation
+from inspect            import isfunction
+from Helper.sqlhelper   import use_db,save,All
+from Helper.sqlhelper   import mysql_db_preparation
 
+
+from DB.settings import _DB_SETTINGS
 
 class Database(object):
 
@@ -82,7 +84,7 @@ class Database(object):
             raise Exception('No table or data collection specified by tname.')
         if isinstance(data,dict):
             data = format(data) if format else data
-            if isinstance(self.conn, pymongo.MongoClient):
+            if isinstance(self.conn, pymongo.MongoClient) :
                 self.handler[table].insert(data)
             elif isinstance(self.conn,pymysql.connections.Connection):
                 save(self.conn, data, table)
@@ -90,9 +92,9 @@ class Database(object):
             for i in data:
                 if isinstance(i,dict):
                     i = format(i) if format else i
-                    if isinstance(self.conn, pymongo.MongoClient):
+                    if isinstance(self.conn, pymongo.MongoClient) :
                         self.handler[table].insert(i)
-                    elif isinstance(self.conn, pymysql.connections.Connection):
+                    elif isinstance(self.conn, pymysql.connections.Connection) :
                         save(self.conn, i, table)
                 else:
                     raise TypeError('Expected a dict type value inside the list,%s type received.' % type(data))
@@ -105,6 +107,16 @@ class Database(object):
     def delete(self):
         pass
 
+    def all(self,tname=None):
+        table = self.table if self.table else tname
+        data  = []
+        if isinstance(self.conn,pymongo.MongoClient):
+            data = list(self.handler[table].find())
+        elif isinstance(self.conn,pymysql.connections.Connection):
+            data = All(self.conn,table)
+        return data
+
+
     def make_preparation(self,tnames):
         if self.type == 'mysql':
             self.connect()
@@ -115,8 +127,11 @@ class Database(object):
 
 
 
-
+#
 # db  = Database(_DB_SETTINGS)
+# db.connect()
+# a = db.all('ps')
+# print(a)
 # db.save({'ip':'127.0.0.1','port':'8080'},tname='ps')
 
 

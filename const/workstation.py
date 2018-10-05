@@ -6,14 +6,15 @@
     @date    : 2018-10-04
 """
 
-from APIserver.apiserver import app
-from Collector.collector import Collector
-from Validator.validator import Validator
-from Detector.detector import Detector
-from Helper.dbhelper import Database
-from multiprocessing import Pool
-from multiprocessing import Manager
-from DB.settings import _DB_SETTINGS,_TABLE
+from APIserver.apiserver    import app
+from Collector.collector    import Collector
+from Validator.validator    import Validator
+from Detector.detector      import Detector
+from Helper.dbhelper        import Database
+from multiprocessing        import Pool
+from multiprocessing        import Manager
+from DB.settings            import _DB_SETTINGS
+from DB.settings            import _TABLE
 
 class Workstation(object):
 

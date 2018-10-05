@@ -9,8 +9,10 @@
 import random
 
 
-#代理ip验证可用性接口
+#代理ip验证可用性验证接口
 proxy_validate_url = 'http://www.moguproxy.com/proxy/checkIp/ipList?ip_ports%5B%5D={}%3A{}'
+#ip地址查询接口:url+ip
+IP_check_url = 'https://ip.cn/index.php?ip='
 
 builtin_crawl_urls = {
     #count 表示爬取数量

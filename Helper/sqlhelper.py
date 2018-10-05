@@ -5,18 +5,25 @@
     @email   : yooleak@outlook.com
     @date    : 2018-10-05
 """
+from gevent.exceptions import ConcurrentObjectUseError
 from DB.settings import create_db_path,create_table_path
 
-def exe_sql(conn,sql):
+def exe_sql(conn,sql,back=False):
     cur = conn.cursor()
     try:
         a = [i + ';' for i in sql.split(';')][:-1]
         for i in a:
             cur.execute(i)
         conn.commit()
+        if back:
+            data = cur.fetchall()
+            return data
+    except (RuntimeError,BlockingIOError,ConcurrentObjectUseError) as e:
+        # conn.rollback()
+        pass
     except Exception as e:
         conn.rollback()
-        raise e
+        raise  e
 
 def gen_sql_insert(data,table):
     """
@@ -67,8 +74,17 @@ def save(conn,data,table):
     try:
         exe_sql(conn,sql)
     except Exception as e:
+        print(sql)
+
         raise e
 
+def All(conn,table):
+    sql = 'select * from {t};'.format(**{'t':table})
+    try:
+        data = exe_sql(conn,sql,back=True)
+        return list(data)
+    except Exception as e:
+        raise e
 
 
 def mysql_db_preparation(conn,dbname,table):
