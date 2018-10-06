@@ -16,11 +16,9 @@ from DB.settings        import _TABLE
 from config.config      import CONCURRENCY
 from config.config      import VALIDATE_AMOUNT
 from config.config      import VALIDATE_F
-from config.config      import VALIDATE_LOCAL
 from const.settings     import proxy_validate_url
 from const.settings     import headers
 from config.config      import VALIDATE_RETRY
-from tools.threads      import ValidateStandbyThread
 from Rator.rator        import Rator
 from Helper.dbhelper    import Database
 from requests.adapters  import HTTPAdapter
@@ -34,37 +32,8 @@ class Validator(object):
         self.db.table   =  _TABLE['standby']
         self.rator      = Rator(self.db)
 
-
-    def import_db(self,db):
-        data = db.all()
-        if db.type == 'mysql':
-            proxies = [':'.join([i[1],i[2]]) for i in data]
-        elif db.type == 'mongodb':
-            proxies = [':'.join([i['ip'],i['port']]) for i in data]
-        else:
-            raise TypeError('Illegal database backend :%s' % self.db.type)
-        return proxies,db
-
-    def standby_validate(self):
-        db = Database(_DB_SETTINGS)
-        db.table = self.db.table
-        db.connect()
-        while 1:
-            proxies,db = self.import_db(db)
-            if proxies:
-                try:
-                    for i in proxies:
-                        self.validate_proxy( i,save=False,db=db)
-                except Exception as e:
-                    raise e
-                finally:
-                    db.close()
-                time.sleep(VALIDATE_LOCAL)
-
     def run(self, proxyList):
         self.rator.begin()
-        self.standbyThread = ValidateStandbyThread(self.standby_validate)
-        self.standbyThread.start()
         while 1:
             try:
                 if proxyList:
@@ -72,14 +41,15 @@ class Validator(object):
                     pop_len =  pen if pen <= VALIDATE_AMOUNT else VALIDATE_AMOUNT
                     stanby_proxies =[proxyList.pop() for x in range(pop_len)]
                     gpool = pool.Pool(CONCURRENCY)
-                    gevent.joinall([gpool.spawn(self.validate_proxy,i) for i in stanby_proxies if i])
+                    gevent.joinall([gpool.spawn(self.validate_proxy,i,self.rator) for i in stanby_proxies if i])
                 time.sleep(VALIDATE_F)
             except Exception as e:
                 self.rator.end()
-                self.standbyThread.join()
                 raise e
 
-    def validate_proxy(self,proxy,save=True,db=None):
+    def validate_proxy(self,proxy,rator=None,save=True,db=None):
+        if not rator:
+            raise Exception('No rator received.')
         ip, port = proxy.split(':')
         proxy = {}
         session = requests.Session()
@@ -101,12 +71,12 @@ class Validator(object):
                           'resp_time':res['time'],'test_count':0,
                           'fail_count':0,'success_rate':'','stability':0.00}
                 if save:
-                    self.rator.mark_success(bullet)
+                    rator.mark_success(bullet)
                 else:
-                    self.rator.mark_update(bullet)
+                    rator.mark_update(bullet)
             else:
                 if not save:
-                    self.rator.mark_fail({'ip':ip,'port':port},db)
+                    rator.mark_fail({'ip':ip,'port':port},db)
 
 
 

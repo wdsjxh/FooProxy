@@ -10,7 +10,8 @@ import pymongo
 from inspect            import isfunction
 from Helper.sqlhelper   import mysql_db_preparation
 from const.settings     import con_map
-from Helper.sqlhelper   import use_db,save,All,select,update
+from Helper.sqlhelper   import use_db,save,All,\
+    select,update,delete
 
 
 from DB.settings import _DB_SETTINGS
@@ -122,7 +123,18 @@ class Database(object):
             except Exception as e:
                 raise e
 
-    def delete(self,condition):
+    def delete(self,condition,tname=None):
+        if not condition: return
+        conditions,strs = self.gen_mapped_condition(condition)
+        table = self.table if self.table else tname
+        if not isinstance(condition,dict):
+            raise TypeError('condition is not a valid dict type param.')
+        if isinstance(self.conn, pymongo.MongoClient):
+            self.handler[table].deleteMany(conditions)
+        elif isinstance(self.conn, pymysql.connections.Connection):
+            delete(self.conn, strs, table)
+
+
         pass
 
     def update(self,condition,data,tname=None):

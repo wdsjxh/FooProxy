@@ -25,12 +25,3 @@ class CrawlThread(threading.Thread):
             return None
 
 
-class ValidateStandbyThread(threading.Thread):
-    def __init__(self, func, args=() ):
-        super(ValidateStandbyThread, self).__init__()
-        self.func = func
-        self.args = args
-        self.setDaemon(True)
-
-    def run(self):
-        self.result = self.func(*self.args)

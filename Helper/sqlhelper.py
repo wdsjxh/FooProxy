@@ -88,6 +88,14 @@ def save(conn,data,table):
     except Exception as e:
         raise e
 
+def delete(conn,condition,table):
+    sql = 'delete from {t} where {where} '.format(**{'t':table,'where':condition})
+    try:
+        exe_sql(conn,sql)
+    except Exception as e:
+        raise e
+
+
 def select(conn,condition,table):
     if not condition:return
     _sql = ' and '.join(condition)

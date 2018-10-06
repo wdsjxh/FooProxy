@@ -7,26 +7,67 @@
 """
 
 import time
+import gevent
+from gevent             import pool
+from gevent             import monkey
 from tools.util         import time_to_date
 from tools.util         import get_ip_addr
 from Helper.dbhelper    import Database
 from DB.settings        import _DB_SETTINGS
+from DB.settings        import _TABLE
 from const.settings     import PRECISION
+from config.config      import CONCURRENCY
 from config.config      import MIN_SUCCESS_RATE
+from config.config      import VALIDATE_AMOUNT
+from config.config      import VALIDATE_LOCAL
+
+monkey.patch_socket()
 
 class Rator(object):
 
     def __init__(self,db):
         self.raw_filter     = set()
         self.delete_filter  = set()
+        self.local_data     = []
         self.db             = db
 
     def begin(self):
+        self.db.table = _TABLE['standby']
         self.db.connect()
         self.pull_table(self.db.table)
 
     def end(self):
         self.db.close()
+
+    def run(self,target):
+        self.begin()
+        while 1:
+            try:
+                if self.local_data:
+                    print('local_...test')
+                    pen = len(self.local_data)
+                    pop_len = pen if pen <= VALIDATE_AMOUNT else VALIDATE_AMOUNT
+                    local_proxies = [self.local_data.pop() for i in range(pop_len)]
+                    gpool = pool.Pool(CONCURRENCY)
+                    gevent.joinall([gpool.spawn(target, i,self,False,self.db) for i in local_proxies if i])
+                    time.sleep(VALIDATE_LOCAL)
+                else:
+                    self.local_data = self.import_db()
+            except Exception as e:
+                self.end()
+                raise e
+
+    def import_db(self):
+        data = self.db.all()
+        if self.db.type == 'mysql':
+            proxies = [':'.join([i[1],i[2]]) for i in data]
+        elif self.db.type == 'mongodb':
+            proxies = [':'.join([i['ip'],i['port']]) for i in data]
+        else:
+            raise TypeError('Illegal database backend :%s' % self.db.type)
+        print('import local data:%d'%len(proxies))
+        return proxies
+
 
     def pull_table(self,tname):
         if not tname:return
@@ -47,6 +88,7 @@ class Rator(object):
         data['valid_time'] = valid_time
         if proxy in self.raw_filter:
             if proxy not in self.delete_filter:
+                print('repeated: %s'%proxy)
                 self.mark_update(data)
                 return
         else:
@@ -74,7 +116,7 @@ class Rator(object):
             _f_count = _one_data[9]
             _success_rate = _one_data[-2]
             valid_time = time_to_date(int(time.time()))
-            update_data['score'] = _score-5
+            update_data['score'] = round(_score-5,2)
             update_data['test_count'] = _count+1
             update_data['fail_count'] = _f_count+1
             update_data['valid_time'] = valid_time
@@ -82,7 +124,8 @@ class Rator(object):
             update_data['success_rate'] = str(success_rate*100) + '%'
             update_data['stability'] = round(update_data['score']*update_data['test_count']*
                                              success_rate /PRECISION,4)
-            if _count >= 100 and _success_rate <= str(MIN_SUCCESS_RATE*100)+'%':
+            if (_count >= 50 and _success_rate <= str(MIN_SUCCESS_RATE*100)+'%') or \
+                    _score < 0:
                 db.delete({'ip':ip,'port':port})
             else:
                 print(ip)
