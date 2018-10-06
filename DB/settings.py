@@ -8,12 +8,12 @@
 
 #代理连接数据库
 _DB_SETTINGS = {
-    'backend'	:'mysql',		    #数据库类型选择 (MongoDB?MySQL?...)
+    'backend'	:'mongodb',		    #数据库类型选择 (MongoDB?MySQL?...)
     'host'		:'localhost',		#数据库主机
-    'port'		:3306,				#数据库主机服务端口
+    'port'		:27017,				#数据库主机服务端口
     'user'		:'',		    #数据库用户
     'passwd'	:'',	#密码
-    'database'  :'proxy'            #使用数据库名
+    'database'  :'proxies'            #使用数据库名
 }
 
 #存储代理数据的数据表,值可以自己命名，键不动

@@ -78,10 +78,8 @@ class Rator(object):
             update_data['test_count'] = _count+1
             update_data['fail_count'] = _f_count+1
             update_data['valid_time'] = valid_time
-            success_rate = round(1 - (update_data['fail_count'] /
-                                                         update_data['test_count']),
-                                                    3)
-            update_data['success_rate'] = str(success_rate* 100) + '%'
+            success_rate = round(1-(update_data['fail_count']/update_data['test_count']),3)
+            update_data['success_rate'] = str(success_rate*100) + '%'
             update_data['stability'] = round(update_data['score']*update_data['test_count']*
                                              success_rate /PRECISION,4)
             if _count >= 100 and _success_rate <= str(MIN_SUCCESS_RATE*100)+'%':

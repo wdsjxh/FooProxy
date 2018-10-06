@@ -29,7 +29,6 @@ def nyloner():
         crypted_data = response.json()
         data = base64_decode(crypted_data['list'])
         res = [':'.join([i['ip'],i['port']]) for i in data]
-        print(len(res))
         return res
 
 def ip66():
@@ -40,7 +39,6 @@ def ip66():
     data = [re.findall(r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}\b\:\d+', i)
             for i in soup.body.text.split('\r\n') if i.strip()]
     data = [i[0] for i in data if i]
-    print(len(data))
     return data
 
 

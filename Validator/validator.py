@@ -35,21 +35,26 @@ class Validator(object):
         self.rator      = Rator(self.db)
 
 
-    def import_db(self):
-        db = Database(_DB_SETTINGS)
-        db.table = self.db.table
-        db.connect()
+    def import_db(self,db):
         data = db.all()
-        proxies = [':'.join([i[1],i[2]]) for i in data]
+        if db.type == 'mysql':
+            proxies = [':'.join([i[1],i[2]]) for i in data]
+        elif db.type == 'mongodb':
+            proxies = [':'.join([i['ip'],i['port']]) for i in data]
+        else:
+            raise TypeError('Illegal database backend :%s' % self.db.type)
         return proxies,db
 
     def standby_validate(self):
+        db = Database(_DB_SETTINGS)
+        db.table = self.db.table
+        db.connect()
         while 1:
-            proxies,db = self.import_db()
+            proxies,db = self.import_db(db)
             if proxies:
                 try:
-                    gpool = pool.Pool(CONCURRENCY)
-                    gevent.joinall([gpool.spawn(self.validate_proxy, i,save=False,db=db) for i in proxies])
+                    for i in proxies:
+                        self.validate_proxy( i,save=False,db=db)
                 except Exception as e:
                     raise e
                 finally:
