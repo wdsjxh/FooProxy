@@ -48,6 +48,7 @@ class Database(object):
         if isinstance(self.handler, pymysql.cursors.Cursor):
             self.handler.close()
         self.conn.close()
+        self.conn=None
 
     def __connect_mongodb(self):
         """
@@ -130,12 +131,9 @@ class Database(object):
         if not isinstance(condition,dict):
             raise TypeError('condition is not a valid dict type param.')
         if isinstance(self.conn, pymongo.MongoClient):
-            self.handler[table].deleteMany(conditions)
+            self.handler[table].delete_many(conditions)
         elif isinstance(self.conn, pymysql.connections.Connection):
             delete(self.conn, strs, table)
-
-
-        pass
 
     def update(self,condition,data,tname=None):
         table = self.table if self.table else tname
@@ -187,8 +185,11 @@ class Database(object):
 
 #
 # db  = Database(_DB_SETTINGS)
+# db.table = 'standby'
 # db.connect()
-# a = db.all('ps')
+# a = db.all('proxies')
+# db.delete({'ip':'92.255.199.133','port':'8080'})
+
 # print(a)
 # db.save({'ip':'127.0.0.1','port':'8080'},tname='ps')
 

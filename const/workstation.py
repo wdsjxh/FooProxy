@@ -45,7 +45,7 @@ class Workstation(object):
     def work(self):
         self.preparing()
         pool = Pool(4)
-        func = [self.run_collector,self.run_validator,self.run_detector,self.run_rator]
+        func = [self.run_detector,self.run_rator]
         results = [pool.apply_async(fun,args=(self.proxyList,)) for fun in func]
         pool.close()
         app.run()

@@ -16,7 +16,7 @@ VALIDATE_AMOUNT     = 500
 #验证器验证抓取数据频率 ： 秒/次
 VALIDATE_F          = 5
 #验证器验证本地库频率 ： 秒/次
-VALIDATE_LOCAL      = 20
+VALIDATE_LOCAL      = 300
 #验证器请求超时重试次数
 VALIDATE_RETRY      = 5
 #代理IP成功率的最低要求,低于此要求均删除,100次周期测试

@@ -43,6 +43,7 @@ class Rator(object):
         self.begin()
         while 1:
             try:
+                print(len(self.local_data))
                 if self.local_data:
                     print('local_...test')
                     pen = len(self.local_data)
@@ -84,30 +85,29 @@ class Rator(object):
         ip = data['ip']
         port = data['port']
         proxy = ':'.join([ip,port])
+        if proxy in self.raw_filter:
+            print('repeated: %s'%proxy)
+            self.mark_update(data)
+            return
+        address = get_ip_addr(ip)
+        elapsed = round(int(data['resp_time'].replace('ms', '')) / 1000, 3)
+        score = round(100 - 10 * (elapsed - 1), 2)
+        stability = round(score/PRECISION,4)
         valid_time = time_to_date(int(time.time()))
         data['valid_time'] = valid_time
-        if proxy in self.raw_filter:
-            if proxy not in self.delete_filter:
-                print('repeated: %s'%proxy)
-                self.mark_update(data)
-                return
-        else:
-            address = get_ip_addr(ip)
-            elapsed = round(int(data['resp_time'].replace('ms', '')) / 1000, 3)
-            score = round(100 - 10 * (elapsed - 1), 2)
-            stability = round(score/PRECISION,4)
-            data['address'] = address
-            data['score'] = score
-            data['test_count'] = 1
-            data['stability'] = stability
-            data['success_rate'] = str(round(1 - (data['fail_count'] / data['test_count']),
-                                             3) * 100) + '%'
-            self.db.save(data)
-            self.raw_filter.add(proxy)
+        data['address'] = address
+        data['score'] = score
+        data['test_count'] = 1
+        data['stability'] = stability
+        data['success_rate'] = str(round(1 - (data['fail_count'] / data['test_count']),
+                                         3) * 100) + '%'
+        self.db.save(data)
+        self.raw_filter.add(proxy)
 
     def mark_fail(self,data,db=None):
         ip = data['ip']
         port = data['port']
+        proxy = ':'.join([ip,port])
         update_data = {}
         _one_data = db.select({'ip': ip, 'port': port})
         if _one_data:
@@ -124,13 +124,15 @@ class Rator(object):
             update_data['success_rate'] = str(success_rate*100) + '%'
             update_data['stability'] = round(update_data['score']*update_data['test_count']*
                                              success_rate /PRECISION,4)
-            if (_count >= 50 and _success_rate <= str(MIN_SUCCESS_RATE*100)+'%') or \
+            if (_count >= 100 and _success_rate <= str(MIN_SUCCESS_RATE*100)+'%') or \
                     _score < 0:
                 db.delete({'ip':ip,'port':port})
+                self.raw_filter.remove(proxy)
+                self.delete_filter.add(proxy)
+                print('------------deleted:%s-------'%ip)
             else:
-                print(ip)
                 db.update({'ip':ip,'port':port},update_data)
-                print(update_data)
+                print('failed : '+ip)
 
     def mark_update(self,data):
         db      = Database(_DB_SETTINGS)
