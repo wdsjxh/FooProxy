@@ -35,11 +35,10 @@ def get_ip_addr(ip):
         try:
             res = rep('code')[1].text
         except Exception as e:
-            return None
+            return 'unknown'
         return res
     except Exception as e:
-        print(e)
-        return None
+        return 'unknown'
 
 
 def get_cookies(url, headers=headers, params={},proxies={}):

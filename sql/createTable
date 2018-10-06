@@ -5,10 +5,11 @@ create table {table} (
     port VARCHAR(255)not null ,
     anony_type VARCHAR(255) NULL,
     address VARCHAR(255) NULL,
-    score VARCHAR(255) NULL,
+    score float(10,2) default 0.00,
     valid_time VARCHAR(255) NULL ,
     resp_time VARCHAR(255) NULL,
     test_count int default 0,
     fail_count int default 0,
-    success_rate VARCHAR(255) NULL
+    success_rate VARCHAR(255) NULL,
+    stability float (12,4) default 0.0000
 );

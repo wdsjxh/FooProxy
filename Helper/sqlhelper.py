@@ -5,25 +5,37 @@
     @email   : yooleak@outlook.com
     @date    : 2018-10-05
 """
-from gevent.exceptions import ConcurrentObjectUseError
-from DB.settings import create_db_path,create_table_path
+from gevent.exceptions  import ConcurrentObjectUseError
+from pymysql.err        import OperationalError
+from pymysql.err        import InterfaceError
+from pymysql.err        import InternalError
+from DB.settings        import create_db_path,create_table_path
 
 def exe_sql(conn,sql,back=False):
     cur = conn.cursor()
+    commit = False
     try:
         a = [i + ';' for i in sql.split(';')][:-1]
         for i in a:
             cur.execute(i)
-        conn.commit()
+            conn.commit()
         if back:
             data = cur.fetchall()
             return data
-    except (RuntimeError,BlockingIOError,ConcurrentObjectUseError) as e:
-        # conn.rollback()
-        pass
+        else:
+            conn.commit()
+            commit = True
+    except (RuntimeError,BlockingIOError,
+            ConcurrentObjectUseError,InterfaceError,
+            OperationalError,InternalError) as e:
+            pass
     except Exception as e:
-        conn.rollback()
+        if commit:
+            conn.rollback()
         raise  e
+    finally:
+        cur.close()
+
 
 def gen_sql_insert(data,table):
     """
@@ -74,9 +86,27 @@ def save(conn,data,table):
     try:
         exe_sql(conn,sql)
     except Exception as e:
-        print(sql)
-
         raise e
+
+def select(conn,condition,table):
+    if not condition:return
+    _sql = ' and '.join(condition)
+    sql= 'select * from {t} where '.format(**{'t':table}) + _sql+';'
+    try:
+        data = exe_sql(conn,sql,back=True)
+        return list(data[0]) if data else []
+    except Exception as e:
+        raise e
+
+def update(conn,condition,data,table):
+    set_sql = ','.join(['='.join([key, "'" + str(data[key]) + "'"]) for key in data])
+    where_sql = ' and '.join(condition)
+    sql = 'update {t} set {set} where {where}; '.format(**{'t':table,'set':set_sql,'where':where_sql})
+    try:
+        exe_sql(conn,sql)
+    except Exception as e:
+        raise e
+
 
 def All(conn,table):
     sql = 'select * from {t};'.format(**{'t':table})
@@ -117,6 +147,9 @@ def mysql_db_preparation(conn,dbname,table):
     except Exception as e:
         conn.rollback()
         raise e
+    finally:
+        cur.close()
+
 
 
 

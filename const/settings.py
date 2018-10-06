@@ -5,7 +5,6 @@
     @email   : yooleak@outlook.com
     @date    : 2018-10-04
 """
-
 import random
 
 
@@ -54,7 +53,19 @@ _66ip_params = {
 }
 
 
+#sql语句与MongoDB语句的映射
+con_map = {
+    '=':'$eq',
+    '<':'$lt',
+    '<=':'$lte',
+    '>':'$gt',
+    '>=':'$gte',
+    '!=':'$ne',
+}
 
+#代理数据稳定性精度,数值越大精度越高 200-500间较好,一次更改后不能动
+#除非数据库清空后重新进行抓取，保持数据稳定的一致性
+PRECISION = 500
 
 #伪造请求头部浏览器
 user_agents = [

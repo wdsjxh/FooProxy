@@ -8,8 +8,9 @@
 import pymysql
 import pymongo
 from inspect            import isfunction
-from Helper.sqlhelper   import use_db,save,All
 from Helper.sqlhelper   import mysql_db_preparation
+from const.settings     import con_map
+from Helper.sqlhelper   import use_db,save,All,select,update
 
 
 from DB.settings import _DB_SETTINGS
@@ -101,11 +102,39 @@ class Database(object):
         else:
             raise TypeError('Expected a [{},{}..] or {} type data,%s type received.' % type(data))
 
-    def select(self):
+    def select(self,condition,tname=None):
+        table = self.table if self.table else tname
+        if not isinstance(condition,dict):
+            raise TypeError('condition is not a valid dict type param.')
+        else:
+            try:
+                data = []
+                conditions,strs = self.gen_mapped_condition(condition)
+                if isinstance(self.conn, pymongo.MongoClient):
+                    data = list(self.handler[table].find(conditions))
+                    if len(data)<=1:
+                        data = list(data[0].values())
+                    else:
+                        data = [list(i.values()) for i in data]
+                elif isinstance(self.conn, pymysql.connections.Connection):
+                    data = select(self.conn,strs,table)
+                return data
+            except Exception as e:
+                raise e
+
+    def delete(self,condition):
         pass
 
-    def delete(self):
-        pass
+    def update(self,condition,data,tname=None):
+        table = self.table if self.table else tname
+        if not data :return
+        if not isinstance(condition, dict) and not isinstance(data,dict):
+            raise TypeError('Params (condition and data) should both be the dict type.')
+        conditions, strs = self.gen_mapped_condition(condition)
+        if isinstance(self.conn, pymongo.MongoClient):
+            self.handler[table].update(conditions,{'$set':data},False,True )
+        elif isinstance(self.conn, pymysql.connections.Connection):
+            update(self.conn, strs, data,table)
 
     def all(self,tname=None):
         table = self.table if self.table else tname
@@ -116,6 +145,8 @@ class Database(object):
             data = All(self.conn,table)
         return data
 
+    def pop_to(self,condition,table):
+        pass
 
     def make_preparation(self,tnames):
         if self.type == 'mysql':
@@ -124,8 +155,23 @@ class Database(object):
                 mysql_db_preparation(self.conn,self.db,i)
             self.close()
 
-
-
+    def gen_mapped_condition(self,condition):
+        strs = []
+        for key in condition:
+            if isinstance(condition[key], dict):
+                t = condition[key]
+                operator = list(t.keys())[0]
+                value = t[operator]
+                if isinstance(self.conn, pymongo.MongoClient):
+                    o = con_map[operator]
+                    condition[key].pop(operator)
+                    condition[key][o] = value
+                elif isinstance(self.conn, pymysql.connections.Connection):
+                    strs.append(operator.join([key, "'" + str(value) + "'"]))
+            else:
+                if isinstance(self.conn, pymysql.connections.Connection):
+                    strs.append('='.join([key, "'" + str(condition[key]) + "'"]))
+        return condition,strs
 
 #
 # db  = Database(_DB_SETTINGS)
