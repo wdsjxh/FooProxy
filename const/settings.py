@@ -12,7 +12,7 @@ import random
 proxy_validate_url = 'http://www.moguproxy.com/proxy/checkIp/ipList?ip_ports%5B%5D={}%3A{}'
 #ip地址查询接口:url+ip
 IP_check_url = 'https://ip.cn/index.php?ip='
-
+#采集器内置爬虫采集地址
 builtin_crawl_urls = {
     #count 表示爬取数量
     'nyloner':{
@@ -51,8 +51,6 @@ _66ip_params = {
     'proxytype': 2,
     'api': '66ip',
 }
-
-
 #sql语句与MongoDB语句的映射
 con_map = {
     '=':'$eq',
@@ -62,11 +60,18 @@ con_map = {
     '>=':'$gte',
     '!=':'$ne',
 }
-
 #代理数据稳定性精度,数值越大精度越高 200-500间较好,一次更改后不能动
 #除非数据库清空后重新进行抓取，保持数据稳定的一致性
 PRECISION = 500
-
+#日志配置文件路径
+LOG_CONF = 'log/log.conf'
+#运行模式函数映射
+RUN_FUNC = {
+    'Collector' : 'run_collector',
+    'Validator' : 'run_validator',
+    'Rator'     : 'run_rator',
+    'Detector'  : 'run_detector',
+}
 #伪造请求头部浏览器
 user_agents = [
 	"Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
@@ -104,6 +109,7 @@ user_agents = [
 	"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11",
 	"Mozilla/5.0 (X11; U; Linux x86_64; zh-CN; rv:1.9.2.10) Gecko/20100922 Ubuntu/10.10 (maverick) Firefox/3.6.10"
 ]
+#伪造请求头部
 headers = {
 	'user-agent': random.choice(user_agents),
 }

@@ -9,6 +9,7 @@
 import time
 import gevent
 import requests
+import logging
 from gevent             import pool
 from gevent             import monkey
 from DB.settings        import _DB_SETTINGS
@@ -23,8 +24,8 @@ from Rator.rator        import Rator
 from Helper.dbhelper    import Database
 from requests.adapters  import HTTPAdapter
 
-
 monkey.patch_socket()
+logger = logging.getLogger('Validator')
 
 class Validator(object):
     def __init__(self):
@@ -33,19 +34,24 @@ class Validator(object):
         self.rator      = Rator(self.db)
 
     def run(self, proxyList):
+        logger.info('Running Validator.')
         self.rator.begin()
         while 1:
             try:
                 if proxyList:
                     pen = len(proxyList)
+                    logger.info('Proxies from Collector is detected,length : %d '%pen)
                     pop_len =  pen if pen <= VALIDATE_AMOUNT else VALIDATE_AMOUNT
                     stanby_proxies =[proxyList.pop() for x in range(pop_len)]
+                    logger.info('Start to verify the collected proxy data,amount: %d '%pop_len)
                     gpool = pool.Pool(CONCURRENCY)
                     gevent.joinall([gpool.spawn(self.validate_proxy,i,self.rator) for i in stanby_proxies if i])
                 time.sleep(VALIDATE_F)
             except Exception as e:
+                logger.error('Error class : %s , msg : %s '%(e.__class__,e))
                 self.rator.end()
-                raise e
+                logger.info('Validator shuts down.')
+                return
 
     def validate_proxy(self,proxy,rator=None,save=True,db=None):
         if not rator:
@@ -61,7 +67,7 @@ class Validator(object):
                                     headers=headers,
                                     timeout=10)
         except Exception as e:
-            print(e)
+            logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
         else:
             data = response.json()
             res = data['msg'][0]
@@ -69,7 +75,7 @@ class Validator(object):
                 bullet = {'ip':ip,'port':port,'anony_type':res['anony'],
                           'address':'','score':0,'valid_time':'',
                           'resp_time':res['time'],'test_count':0,
-                          'fail_count':0,'success_rate':'','stability':0.00}
+                          'fail_count':0,'combo_success':1,'combo_fail':0,'success_rate':'','stability':0.00}
                 if save:
                     rator.mark_success(bullet)
                 else:

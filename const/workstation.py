@@ -6,6 +6,7 @@
     @date    : 2018-10-04
 """
 
+import logging
 from APIserver.apiserver    import app
 from Collector.collector    import Collector
 from Validator.validator    import Validator
@@ -16,6 +17,10 @@ from multiprocessing        import Pool
 from multiprocessing        import Manager
 from DB.settings            import _DB_SETTINGS
 from DB.settings            import _TABLE
+from config.config          import MODE
+from const.settings         import RUN_FUNC
+
+logger = logging.getLogger()
 
 class Workstation(object):
 
@@ -45,9 +50,14 @@ class Workstation(object):
     def work(self):
         self.preparing()
         pool = Pool(4)
-        func = [self.run_detector,self.run_rator]
+        func = []
+        for i in MODE:
+            if MODE[i]:
+                func.append(eval('self.'+RUN_FUNC[i]))
         results = [pool.apply_async(fun,args=(self.proxyList,)) for fun in func]
         pool.close()
+        print(logger)
+        logger.info('Workstation process pool starting.....OK')
         app.run()
 
 

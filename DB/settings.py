@@ -11,17 +11,15 @@ _DB_SETTINGS = {
     'backend'	:'mongodb',		    #数据库类型选择 (MongoDB?MySQL?...)
     'host'		:'localhost',		#数据库主机
     'port'		:27017,				#数据库主机服务端口
-    'user'		:'',		    #数据库用户
-    'passwd'	:'',	#密码
-    'database'  :'proxies'            #使用数据库名
+    'user'		:'',		        #数据库用户
+    'passwd'	:'',	            #密码
+    'database'  :'myproxy'          #使用数据库名
 }
-
 #存储代理数据的数据表,值可以自己命名，键不动
 _TABLE = {
     'standby'   :'standby',     #经过验证器验证后，存放有效代理的数据表
     'stable'    :'stable',      #经过检测器循环检测后，存放高分稳定代理的数据表
 }
-
 #创建数据库和数据表的sql文件路径,默认不动
 create_db_path      = 'sql/createDB'
 create_table_path   = 'sql/createTable'
