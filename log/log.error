@@ -1,0 +1,1 @@
+2018-10-08 00:41:35,443 (SpawnPoolWorker-2 pid:356752) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 

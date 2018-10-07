@@ -57,7 +57,6 @@ class Workstation(object):
                 func.append(eval('self.'+RUN_FUNC[i]))
         results = [pool.apply_async(fun,args=(self.proxyList,)) for fun in func]
         pool.close()
-        print(logger)
         logger.info('Workstation process pool starting.....OK')
         app.run()
 
