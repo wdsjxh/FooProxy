@@ -10,6 +10,7 @@ create table {table} (
     resp_time VARCHAR(255) NULL,
     test_count int default 0,
     fail_count int default 0,
+    createdTime VARCHAR(255) NULL ,
     combo_success int default 0,
     combo_fail int default 0,
     success_rate VARCHAR(255) NULL,

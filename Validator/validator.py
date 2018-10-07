@@ -75,7 +75,8 @@ class Validator(object):
                 bullet = {'ip':ip,'port':port,'anony_type':res['anony'],
                           'address':'','score':0,'valid_time':'',
                           'resp_time':res['time'],'test_count':0,
-                          'fail_count':0,'combo_success':1,'combo_fail':0,'success_rate':'','stability':0.00}
+                          'fail_count':0,'createdTime':'','combo_success':1,'combo_fail':0,
+                          'success_rate':'','stability':0.00}
                 if save:
                     rator.mark_success(bullet)
                 else:

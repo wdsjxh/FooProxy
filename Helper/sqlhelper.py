@@ -5,6 +5,7 @@
     @email   : yooleak@outlook.com
     @date    : 2018-10-05
 """
+
 from gevent.exceptions  import ConcurrentObjectUseError
 from pymysql.err        import OperationalError
 from pymysql.err        import InterfaceError
@@ -13,7 +14,6 @@ from DB.settings        import create_db_path,create_table_path
 
 def exe_sql(conn,sql,back=False):
     cur = conn.cursor()
-    commit = False
     try:
         a = [i + ';' for i in sql.split(';')][:-1]
         for i in a:
@@ -22,20 +22,15 @@ def exe_sql(conn,sql,back=False):
         if back:
             data = cur.fetchall()
             return data
-        else:
-            conn.commit()
-            commit = True
     except (RuntimeError,BlockingIOError,
             ConcurrentObjectUseError,InterfaceError,
             OperationalError,InternalError) as e:
             pass
     except Exception as e:
-        if commit:
-            conn.rollback()
+        conn.rollback()
         raise  e
     finally:
         cur.close()
-
 
 def gen_sql_insert(data,table):
     """
@@ -66,12 +61,6 @@ def gen_sql_insert(data,table):
     return sql
 
 def use_db(conn,dbname,create):
-    """
-
-    :param conn:
-    :param dbname:
-    :param create:
-    """
     sql_no = 'use {db};'.format(**{'db':dbname})
     sql_create = 'create database if not exists {db};use {db};'.format(**{'db':dbname})
     sql = sql_no if not create else sql_create
@@ -95,14 +84,16 @@ def delete(conn,condition,table):
     except Exception as e:
         raise e
 
-
 def select(conn,condition,table):
     if not condition:return
     _sql = ' and '.join(condition)
     sql= 'select * from {t} where '.format(**{'t':table}) + _sql+';'
     try:
         data = exe_sql(conn,sql,back=True)
-        return list(data[0]) if data else []
+        if data:
+            return data[0]
+        else:
+            return []
     except Exception as e:
         raise e
 
@@ -115,15 +106,13 @@ def update(conn,condition,data,table):
     except Exception as e:
         raise e
 
-
 def All(conn,table):
     sql = 'select * from {t};'.format(**{'t':table})
     try:
         data = exe_sql(conn,sql,back=True)
-        return list(data)
+        return list(data) if data else []
     except Exception as e:
         raise e
-
 
 def mysql_db_preparation(conn,dbname,table):
     """

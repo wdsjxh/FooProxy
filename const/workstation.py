@@ -35,6 +35,7 @@ class Workstation(object):
     def preparing(self):
         self.database.make_preparation(_TABLE.values())
 
+
     def run_validator(self,proxyList):
         self.validator.run(proxyList)
 

@@ -7,14 +7,14 @@
 """
 import pymysql
 import pymongo
+import logging
 from inspect            import isfunction
 from Helper.sqlhelper   import mysql_db_preparation
 from const.settings     import con_map
 from Helper.sqlhelper   import use_db,save,All,\
     select,update,delete
 
-
-from DB.settings import _DB_SETTINGS
+logger = logging.getLogger()
 
 class Database(object):
 
@@ -61,7 +61,11 @@ class Database(object):
         """
         连接mysql
         """
-        self.conn = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd,database=self.db)
+        self.conn = pymysql.connect(host=self.host, port=self.port, user=self.user, passwd=self.passwd)
+        if self.db:
+            self.use_db(self.db)
+        else:
+            raise ConnectionError('No database specified in DB settings.')
         self.handler = self.conn.cursor()
 
     def use_db(self,dbname,create=False):
@@ -110,7 +114,6 @@ class Database(object):
             raise TypeError('condition is not a valid dict type param.')
         else:
             try:
-                data = []
                 conditions,strs = self.gen_mapped_condition(condition)
                 if isinstance(self.conn, pymongo.MongoClient):
                     data = list(self.handler[table].find(conditions))
@@ -118,11 +121,13 @@ class Database(object):
                         data = list(data[0].values())
                     else:
                         data = [list(i.values()) for i in data]
+                    return data
                 elif isinstance(self.conn, pymysql.connections.Connection):
                     data = select(self.conn,strs,table)
-                return data
+                    return data
             except Exception as e:
-                raise e
+                logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
+                return
 
     def delete(self,condition,tname=None):
         if not condition: return

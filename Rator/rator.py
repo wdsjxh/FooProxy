@@ -53,14 +53,16 @@ class Rator(object):
                     local_proxies = [self.local_data.pop() for i in range(pop_len)]
                     gpool = pool.Pool(CONCURRENCY)
                     gevent.joinall([gpool.spawn(target, i,self,False,self.db) for i in local_proxies if i])
+                    logger.info('Validation finished.')
                     time.sleep(VALIDATE_LOCAL)
                 else:
                     self.local_data = self.import_db()
+                    self.pull_table(self.db.table)
             except Exception as e:
                 logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
                 self.end()
                 logger.info('Rator shuts down.')
-                raise e
+                return
 
     def import_db(self):
         data = self.db.all()
@@ -99,6 +101,7 @@ class Rator(object):
         score = round(100 - 10 * (elapsed - 1), 2)
         stability = round(score/PRECISION,4)
         valid_time = time_to_date(int(time.time()))
+        data['createdTime'] = valid_time
         data['valid_time'] = valid_time
         data['address'] = address
         data['score'] = score
@@ -143,7 +146,7 @@ class Rator(object):
                 self.delete_filter.add(proxy)
             else:
                 db.update({'ip':ip,'port':port},update_data)
-                logger.info('Verify failed: %s '%proxy)
+
 
     def mark_update(self,data):
         db      = Database(_DB_SETTINGS)
@@ -174,6 +177,7 @@ class Rator(object):
             data['success_rate'] = str(success_rate*100)+'%'
             data['stability'] = stability
             del data['fail_count']
+            del data['createdTime']
             db.update({'ip':ip,'port':port},data)
             db.close()
 
