@@ -12,16 +12,16 @@ import requests
 import logging
 from gevent             import pool
 from gevent             import monkey
-from DB.settings        import _DB_SETTINGS
-from DB.settings        import _TABLE
+from config.DBsettings import _DB_SETTINGS
+from config.DBsettings import _TABLE
 from config.config      import CONCURRENCY
 from config.config      import VALIDATE_AMOUNT
 from config.config      import VALIDATE_F
 from const.settings     import proxy_validate_url
 from const.settings     import headers
 from config.config      import VALIDATE_RETRY
-from Rator.rator        import Rator
-from Helper.dbhelper    import Database
+from components.rator import Rator
+from components.dbhelper import Database
 from requests.adapters  import HTTPAdapter
 
 monkey.patch_socket()
@@ -53,17 +53,21 @@ class Validator(object):
                 logger.info('Validator shuts down.')
                 return
 
-    def validate_proxy(self,proxy,rator=None,save=True,db=None):
+    def validate_proxy(self,proxy,rator=None,save=True):
         if not rator:
             raise Exception('No rator received.')
-        ip, port = proxy.split(':')
-        proxy = {}
+        if isinstance(proxy,dict):
+            ip = proxy['ip']
+            port = proxy['port']
+        else:
+            ip, port = proxy.split(':')
+        proxies = {}
         session = requests.Session()
         session.mount('http://', HTTPAdapter(max_retries=VALIDATE_RETRY))
         session.mount('https://', HTTPAdapter(max_retries=VALIDATE_RETRY))
         try:
             response = session.get(proxy_validate_url.format(ip,port),
-                                    proxies = proxy,
+                                    proxies = proxies,
                                     headers=headers,
                                     timeout=10)
         except Exception as e:
@@ -80,10 +84,12 @@ class Validator(object):
                 if save:
                     rator.mark_success(bullet)
                 else:
-                    rator.mark_update(bullet)
+                    proxy['anony_type']=res['anony']
+                    proxy['resp_time'] = res['time']
+                    rator.mark_update(proxy,collected=False)
             else:
                 if not save:
-                    rator.mark_fail({'ip':ip,'port':port},db)
+                    rator.mark_fail(proxy)
 
 
 

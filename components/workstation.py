@@ -8,15 +8,14 @@
 
 import logging
 from APIserver.apiserver    import app
-from Collector.collector    import Collector
-from Validator.validator    import Validator
-from Detector.detector      import Detector
-from Rator.rator            import Rator
-from Helper.dbhelper        import Database
+from components.collector   import Collector
+from components.validator   import Validator
+from components.detector    import Detector
+from components.rator       import Rator
+from components.dbhelper    import Database
 from multiprocessing        import Pool
 from multiprocessing        import Manager
-from DB.settings            import _DB_SETTINGS
-from DB.settings            import _TABLE
+from config.DBsettings      import _DB_SETTINGS
 from config.config          import MODE
 from const.settings         import RUN_FUNC
 
@@ -32,10 +31,6 @@ class Workstation(object):
         self.proxyList = Manager().list()
         self.rator     = Rator(self.database)
 
-    def preparing(self):
-        self.database.make_preparation(_TABLE.values())
-
-
     def run_validator(self,proxyList):
         self.validator.run(proxyList)
 
@@ -49,7 +44,6 @@ class Workstation(object):
         self.rator.run(self.validator.validate_proxy)
 
     def work(self):
-        self.preparing()
         pool = Pool(4)
         func = []
         for i in MODE:

@@ -8,7 +8,7 @@
 import time
 import logging
 from tools.threads import CrawlThread
-from Collector.crawlers import builtin_crawlers
+from components.crawlers import builtin_crawlers
 from custom.custom import  my_crawlers
 from inspect    import isfunction
 from config.config       import COLLECT_TIME_GAP

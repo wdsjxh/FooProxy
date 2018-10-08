@@ -8,8 +8,8 @@
 import json
 from flask import Flask
 
-from Helper.dbhelper import Database
-from DB.settings import _TABLE,_DB_SETTINGS
+from components.dbhelper import Database
+from config.DBsettings import _TABLE,_DB_SETTINGS
 
 
 app = Flask(__name__)

@@ -7,7 +7,7 @@
 """
 import logging.config
 from const.settings     import LOG_CONF
-from const.workstation  import Workstation
+from components.workstation import Workstation
 
 logging.config.fileConfig(LOG_CONF)
 

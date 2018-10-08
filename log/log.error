@@ -1,1 +1,150 @@
 2018-10-08 00:41:35,443 (SpawnPoolWorker-2 pid:356752) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:32:12,587 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:47:15,969 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:53:16,874 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:53:16,876 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:53:16,879 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,043 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,048 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,092 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,094 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,113 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,120 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,122 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,124 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,125 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,127 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,128 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,130 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,135 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,137 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 02:59:18,140 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,678 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,680 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,698 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,699 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,699 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,700 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,701 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,702 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,703 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,704 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,705 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,706 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,707 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,708 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,741 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,743 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,751 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,752 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,753 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,754 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,755 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,756 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,757 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,758 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,759 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,769 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,774 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,784 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,800 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,803 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:02:18,810 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,432 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,439 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,470 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,497 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,498 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,499 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,500 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,501 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,502 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,503 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,503 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,506 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,508 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,511 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,512 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,514 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,515 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,516 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,519 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,520 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:08:20,521 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,387 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,387 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,388 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,390 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,391 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,393 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,395 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,396 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,397 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,398 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,400 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,401 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,401 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,403 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:11:21,404 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:14:22,391 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:14:22,393 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:32:26,272 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:32:26,290 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:38:27,682 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:38:27,725 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:41:28,527 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:44:28,819 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:44:28,820 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:44:28,870 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:44:28,871 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:44:28,876 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:44:28,899 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,399 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,400 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,401 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,403 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,430 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,431 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,432 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,434 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,435 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,436 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,437 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,437 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,438 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,440 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,440 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,442 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,443 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,443 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,444 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 03:47:29,445 (SpawnPoolWorker-2 pid:383484) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 07:57:24,649 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 07:57:24,694 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 07:57:24,697 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 07:57:24,699 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 07:57:24,703 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 07:57:24,705 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 07:57:24,737 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 07:57:24,740 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 07:57:24,743 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 07:57:24,745 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 07:57:24,748 (SpawnPoolWorker-4 pid:379964) line-129  root <select> - [ERROR] : Error class : <class 'pymongo.errors.NetworkTimeout'> , msg : localhost:27017: timed out 
+2018-10-08 13:36:35,687 (SpawnPoolWorker-4 pid:4320) line-129  root <select> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-08 14:46:17,142 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=178.79.24.43%3A53281 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000000009266748>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:17,144 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=179.124.242.34%3A41886 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000000091D2A20>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:17,145 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=179.189.31.9%3A56740 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000000009287CF8>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:17,147 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=103.35.171.81%3A8080 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000000095245C0>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:17,148 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=185.129.6.186%3A53281 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000000008FBBCC0>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:17,148 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=51.255.28.62%3A53281 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000000092FCFD0>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:17,149 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=45.126.154.117%3A51433 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000000009349748>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:17,150 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=203.83.20.53%3A44257 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x00000000067520B8>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:17,150 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=195.43.70.155%3A41749 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x000000000922A550>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:17,152 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=85.95.152.136%3A8888 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000000006752080>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:17,156 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectTimeout'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=45.229.175.18%3A53281 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x0000000006752208>, 'Connection to www.moguproxy.com timed out. (connect timeout=10)')) 
+2018-10-08 14:46:31,093 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectionError'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=185.199.81.63%3A53281 (Caused by ReadTimeoutError("HTTPConnectionPool(host='www.moguproxy.com', port=80): Read timed out. (read timeout=10)")) 
+2018-10-08 14:46:31,098 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectionError'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=123.206.103.161%3A1080 (Caused by ReadTimeoutError("HTTPConnectionPool(host='www.moguproxy.com', port=80): Read timed out. (read timeout=10)")) 
+2018-10-08 14:46:31,099 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectionError'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=200.76.121.100%3A8888 (Caused by ReadTimeoutError("HTTPConnectionPool(host='www.moguproxy.com', port=80): Read timed out. (read timeout=10)")) 
+2018-10-08 14:48:45,769 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectionError'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=77.91.154.93%3A8888 (Caused by ReadTimeoutError("HTTPConnectionPool(host='www.moguproxy.com', port=80): Read timed out. (read timeout=10)")) 
+2018-10-08 14:48:45,770 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectionError'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=66.194.211.198%3A8080 (Caused by ReadTimeoutError("HTTPConnectionPool(host='www.moguproxy.com', port=80): Read timed out. (read timeout=10)")) 
+2018-10-08 14:48:45,771 (SpawnPoolWorker-5 pid:6848) line-74  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectionError'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=94.19.54.215%3A37871 (Caused by ReadTimeoutError("HTTPConnectionPool(host='www.moguproxy.com', port=80): Read timed out. (read timeout=10)")) 

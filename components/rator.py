@@ -12,9 +12,7 @@ from gevent             import pool
 from gevent             import monkey
 from tools.util         import time_to_date
 from tools.util         import get_ip_addr
-from Helper.dbhelper    import Database
-from DB.settings        import _DB_SETTINGS
-from DB.settings        import _TABLE
+from config.DBsettings  import _TABLE
 from const.settings     import PRECISION
 from config.config      import CONCURRENCY
 from config.config      import MIN_SUCCESS_RATE
@@ -52,11 +50,11 @@ class Rator(object):
                     logger.info('Start to verify the local proxy data,amount: %d ' % pop_len)
                     local_proxies = [self.local_data.pop() for i in range(pop_len)]
                     gpool = pool.Pool(CONCURRENCY)
-                    gevent.joinall([gpool.spawn(target, i,self,False,self.db) for i in local_proxies if i])
+                    gevent.joinall([gpool.spawn(target, i,self,False) for i in local_proxies if i])
                     logger.info('Validation finished.')
                     time.sleep(VALIDATE_LOCAL)
                 else:
-                    self.local_data = self.import_db()
+                    self.local_data = self.db.all()
                     self.pull_table(self.db.table)
             except Exception as e:
                 logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
@@ -64,28 +62,11 @@ class Rator(object):
                 logger.info('Rator shuts down.')
                 return
 
-    def import_db(self):
-        data = self.db.all()
-        if self.db.type == 'mysql':
-            proxies = [':'.join([i[1],i[2]]) for i in data]
-        elif self.db.type == 'mongodb':
-            proxies = [':'.join([i['ip'],i['port']]) for i in data]
-        else:
-            logger.error('Illegal database backend :%s' % self.db.type)
-            raise TypeError('Illegal database backend.')
-        return proxies
-
     def pull_table(self,tname):
         if not tname:return
         table_data = self.db.all(tname)
         for i in table_data:
-            if self.db.type == 'mongodb':
-                self.raw_filter.add(':'.join([i['ip'],i['port']]))
-            elif self.db.type == 'mysql':
-                self.raw_filter.add(':'.join([i[1],i[2]]))
-            else:
-                logger.error('Illegal database backend :%s' % self.db.type)
-                raise TypeError('Illegal database backend.')
+            self.raw_filter.add(':'.join([i['ip'],i['port']]))
         logger.info('Rator\'s raw filter initialized,length: %d '%len(self.raw_filter))
 
     def mark_success(self,data):
@@ -93,7 +74,6 @@ class Rator(object):
         port = data['port']
         proxy = ':'.join([ip,port])
         if proxy in self.raw_filter:
-            logger.info('The proxy(%s) had been put into the local db,updating.'%proxy)
             self.mark_update(data)
             return
         address = get_ip_addr(ip)
@@ -112,18 +92,18 @@ class Rator(object):
         self.db.save(data)
         self.raw_filter.add(proxy)
 
-    def mark_fail(self,data,db=None):
+    def mark_fail(self,data):
         ip = data['ip']
         port = data['port']
         proxy = ':'.join([ip,port])
         update_data = {}
-        _one_data = db.select({'ip': ip, 'port': port})
+        _one_data = data
         if _one_data:
-            _score = _one_data[5]
-            _count = _one_data[8]
-            _f_count = _one_data[9]
-            _success_rate = _one_data[-2]
-            _combo_fail = _one_data[-3]
+            _score = _one_data['score']
+            _count = _one_data['test_count']
+            _f_count = _one_data['fail_count']
+            _success_rate = _one_data['success_rate']
+            _combo_fail = _one_data['combo_fail']
             valid_time = time_to_date(int(time.time()))
             update_data['score'] = round(_score-5*((_f_count+1)/(_count+1))*(_combo_fail+1),2)
             update_data['combo_fail'] = _combo_fail+1
@@ -142,34 +122,34 @@ class Rator(object):
                     self.raw_filter.remove(proxy)
                 except KeyError as e:
                     logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
-                db.delete({'ip':ip,'port':port})
+                self.db.delete({'ip':ip,'port':port})
                 self.delete_filter.add(proxy)
             else:
-                db.update({'ip':ip,'port':port},update_data)
+                self.db.update({'ip':ip,'port':port},update_data)
 
-
-    def mark_update(self,data):
-        db      = Database(_DB_SETTINGS)
-        db.table = self.db.table
-        db.connect()
+    def mark_update(self,data,collected=True):
         ip      = data['ip']
         port    = data['port']
         valid_time = time_to_date(int(time.time()))
         data['valid_time'] = valid_time
         elapsed = round(int(data['resp_time'].replace('ms', '')) / 1000, 3)
         score = round(100 - 10 * (elapsed - 1), 2)
-        _one_data = db.select({'ip':ip,'port':port})
+        if collected:
+            _one_data = self.db.select({'ip':ip,'port':port})[0]
+        else:
+            _one_data = data
         if _one_data:
-            _score = _one_data[5]
-            _count = _one_data[8]
-            _f_count = _one_data[9]
-            _address = _one_data[4]
-            _combo_success = _one_data[-4]
-            _success_rate = round(float(_one_data[-2].replace('%',''))/100,4)
+            _score = _one_data['score']
+            _count = _one_data['test_count']
+            _f_count = _one_data['fail_count']
+            _address = _one_data['address']
+            _combo_success = _one_data['combo_success']
+            _success_rate = round(float(_one_data['success_rate'].replace('%',''))/100,4)
             score = round((score+_score*_count)/(_count+1)+0.5*(_combo_success+1)*_success_rate,2)
             address = get_ip_addr(ip) if _address=='unknown' else _address
             success_rate = round(1-(_f_count/(_count+1)),3)
             stability = round(score*(_count+1)*success_rate/PRECISION,4)
+            data['combo_fail'] = 0
             data['address'] = address
             data['score'] = score
             data['test_count'] = _count+1
@@ -178,7 +158,6 @@ class Rator(object):
             data['stability'] = stability
             del data['fail_count']
             del data['createdTime']
-            db.update({'ip':ip,'port':port},data)
-            db.close()
+            self.db.update({'ip':ip,'port':port},data)
 
 
