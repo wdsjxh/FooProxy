@@ -14,6 +14,7 @@
 * 循环检测
 * 择优剔劣
 * API调用
-流程图：
 
+ 流程图：
 
+![流程图](https://github.com/01ly/FooProxy/blob/dev/chart.png)
