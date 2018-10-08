@@ -1,7 +1,5 @@
 # FooProxy
 
-稳健高效的评分制 IP代理池 + API服务提供，可以自己插入采集器进行代理IP的爬取，支持 MongoDB 4.0 使用 Python3.7 
-=======
 评分制 IP代理池 + API服务提供，可以自己插入采集器进行代理IP的爬取，支持 MongoDB 4.0 使用 Python3.7 
 ## 背景
  因为平时爬取某些网站数据时，经常被封IP，同时网上很多的接口又不方便，免费的也少，稳定的更少，所以自己写了一个评分制的ip代理API进行爬虫的供给
@@ -82,4 +80,4 @@
  ![备用有效数据库](https://github.com/01ly/FooProxy/blob/dev/pic/2018-10-09_2-07-47.png)
  2. **高分稳定数据库**
  ![高分稳定数据库](https://github.com/01ly/FooProxy/blob/dev/pic/2018-10-09_2-09-42.png)
->>>>>>> dev
+
