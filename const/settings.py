@@ -7,7 +7,6 @@
 """
 import random
 
-
 #代理ip验证可用性验证接口
 proxy_validate_url = 'http://www.moguproxy.com/proxy/checkIp/ipList?ip_ports%5B%5D={}%3A{}'
 #ip地址查询接口:url+ip
@@ -67,7 +66,6 @@ PRECISION 		= 500
 FAIL_BASIC 		= 5
 #成功一次增加的基本分
 SUCCESS_BASIC 	= 0.1
-
 #日志配置文件路径
 LOG_CONF = 'log/log.conf'
 #运行模式函数映射

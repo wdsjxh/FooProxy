@@ -67,6 +67,7 @@ class Validator(object):
         session.mount('http://', HTTPAdapter(max_retries=VALIDATE_RETRY))
         session.mount('https://', HTTPAdapter(max_retries=VALIDATE_RETRY))
         try:
+            # 可设置响应超时对API服务器请求代理，没写
             response = session.get(proxy_validate_url.format(ip,port),
                                     proxies = proxies,
                                     headers=headers,
@@ -86,7 +87,6 @@ class Validator(object):
                 if save:
                     rator.mark_success(bullet)
                 else:
-
                     proxy['anony_type'] = res['anony']
                     proxy['resp_time']  = res['time']
                     rator.mark_update(proxy,collected=False)

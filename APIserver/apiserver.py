@@ -13,16 +13,16 @@ from components.dbhelper    import Database
 from config.DBsettings      import _TABLE
 from config.DBsettings      import _DB_SETTINGS
 
-logger = logging.getLogger('APIserver')
+logger      = logging.getLogger('APIserver')
+app         = Flask(__name__)
+stable_db   = Database(_DB_SETTINGS)
+standby_db  = Database(_DB_SETTINGS)
 
-app = Flask(__name__)
-
-stable_db  = Database(_DB_SETTINGS)
-standby_db = Database(_DB_SETTINGS)
 standby_db.table    = _TABLE['standby']
 stable_db.table     = _TABLE['stable']
 standby_db.connect()
 stable_db.connect()
+
 all_standby_proxy   = standby_db.all()
 all_stable_proxy    = stable_db.all()
 anony_standby       = [i for i in all_standby_proxy if i['anony_type']=='高匿']
@@ -30,11 +30,9 @@ anony_stable        = [i for i in all_stable_proxy if i['anony_type']=='高匿']
 normal_standby      = [i for i in all_standby_proxy if i['anony_type']=='透明']
 normal_stable       = [i for i in all_stable_proxy if i['anony_type']=='透明']
 
-
 @app.route('/')
 def index():
     return 'Welcome to the FooProxy API server homepage.'
-
 
 @app.route('/proxy')
 @app.route('/proxy/<string:kind>')

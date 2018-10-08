@@ -13,7 +13,6 @@ from const.settings     import con_map
 logger = logging.getLogger()
 
 class Database(object):
-
     def __init__(self,settings):
         self.host   = settings['host']
         self.port   = settings['port']
@@ -114,7 +113,6 @@ class Database(object):
         """
         table = self.table if self.table else tname
         data = self.handler[table].find(condition).limit(num).skip()
-
 
     def gen_mapped_condition(self,condition):
         for key in condition:

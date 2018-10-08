@@ -5,9 +5,9 @@
     @email   : yooleak@outlook.com
     @date    : 2018-10-05
 """
-import logging
 import time
 import gevent
+import logging
 from gevent             import pool
 from tools.util         import time_to_date
 from tools.util         import get_ip_addr
@@ -22,7 +22,6 @@ from const.settings     import FAIL_BASIC,SUCCESS_BASIC
 logger = logging.getLogger('Rator')
 
 class Rator(object):
-
     def __init__(self,db):
         self.raw_filter     = set()
         self.delete_filter  = set()
@@ -105,11 +104,11 @@ class Rator(object):
             _combo_fail = _one_data['combo_fail']
             valid_time = time_to_date(int(time.time()))
             update_data['score'] = round(_score-FAIL_BASIC*((_f_count+1)/(_count+1))*(_combo_fail+1),2)
-            update_data['combo_fail'] = _combo_fail+1
+            update_data['combo_fail']    = _combo_fail+1
             update_data['combo_success'] = 0
-            update_data['test_count'] = _count+1
-            update_data['fail_count'] = _f_count+1
-            update_data['valid_time'] = valid_time
+            update_data['test_count']    = _count+1
+            update_data['fail_count']    = _f_count+1
+            update_data['valid_time']    = valid_time
             success_rate = round(1-(update_data['fail_count']/update_data['test_count']),3)
             update_data['success_rate'] = str(success_rate*100) + '%'
             update_data['stability'] = round(update_data['score']*update_data['test_count']*

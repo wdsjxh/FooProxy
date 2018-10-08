@@ -22,7 +22,6 @@ from const.settings         import RUN_FUNC
 logger = logging.getLogger()
 
 class Workstation(object):
-
     def __init__(self):
         self.collector = Collector()
         self.validator = Validator()
@@ -49,7 +48,7 @@ class Workstation(object):
         for i in MODE:
             if MODE[i]:
                 func.append(eval('self.'+RUN_FUNC[i]))
-        results = [pool.apply_async(fun,args=(self.proxyList,)) for fun in func]
+        [pool.apply_async(fun,args=(self.proxyList,)) for fun in func]
         pool.close()
         logger.info('Workstation process pool starting.....OK')
         app.run()

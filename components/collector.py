@@ -7,11 +7,11 @@
 """
 import time
 import logging
-from tools.threads import CrawlThread
-from components.crawlers import builtin_crawlers
-from custom.custom import  my_crawlers
-from inspect    import isfunction
-from config.config       import COLLECT_TIME_GAP
+from tools.threads          import CrawlThread
+from components.crawlers    import builtin_crawlers
+from custom.custom          import  my_crawlers
+from inspect                import isfunction
+from config.config          import COLLECT_TIME_GAP
 
 logger = logging.getLogger('Collector')
 
@@ -20,14 +20,12 @@ class Collector(object):
         self.__proxyList = None
         self.__crawlers  = my_crawlers
 
-
     def find_crawlers(self):
         _crawlers = [i for i in builtin_crawlers if isfunction(i)]
         custom_crawlers  = [i for i in self.__crawlers if isfunction(i)]
         _crawlers.extend(custom_crawlers)
         logger.info('Find  %d  data collectors.'%len(_crawlers))
         return _crawlers
-
 
     def run(self,proxyList):
         while 1:
