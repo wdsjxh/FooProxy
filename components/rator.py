@@ -9,6 +9,7 @@ import time
 import gevent
 import logging
 from gevent             import pool
+from gevent             import monkey
 from tools.util         import time_to_date
 from tools.util         import get_ip_addr
 from config.DBsettings  import _TABLE
@@ -18,6 +19,9 @@ from config.config      import MIN_SUCCESS_RATE
 from config.config      import LOCAL_AMOUNT
 from config.config      import VALIDATE_LOCAL
 from const.settings     import FAIL_BASIC,SUCCESS_BASIC
+
+monkey.patch_socket()
+monkey.patch_os()
 
 logger = logging.getLogger('Rator')
 
@@ -35,30 +39,6 @@ class Rator(object):
 
     def end(self):
         self.db.close()
-
-    def run(self,target):
-        logger.info('Running Rator.')
-        self.begin()
-        while 1:
-            try:
-                if self.local_data:
-                    pen = len(self.local_data)
-                    logger.info('Imported the untested local proxies,length: %d '%pen)
-                    pop_len = pen if pen <= LOCAL_AMOUNT else LOCAL_AMOUNT
-                    logger.info('Start to verify the local proxy data,amount: %d ' % pop_len)
-                    local_proxies = [self.local_data.pop() for i in range(pop_len)]
-                    gpool = pool.Pool(CONCURRENCY)
-                    gevent.joinall([gpool.apply_async(target, args=(i,self,False)) for i in local_proxies if i])
-                    logger.info('Local validation finished.')
-                    time.sleep(VALIDATE_LOCAL)
-                else:
-                    self.local_data = self.db.all()
-                    self.pull_table(self.db.table)
-            except Exception as e:
-                logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
-                self.end()
-                logger.info('Rator shuts down.')
-                return
 
     def pull_table(self,tname):
         if not tname:
@@ -128,6 +108,7 @@ class Rator(object):
     def mark_update(self,data,collected=True):
         ip      = data['ip']
         port    = data['port']
+        proxy = ':'.join([ip,port])
         valid_time = time_to_date(int(time.time()))
         data['valid_time'] = valid_time
         elapsed = round(int(data['resp_time'].replace('ms', '')) / 1000, 3)
@@ -137,7 +118,7 @@ class Rator(object):
                 _one_data = self.db.select({'ip':ip,'port':port})[0]
             except Exception as e:
                 logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
-                logger.error('Proxy %s  does not in the standby database,skipping...')
+                logger.error('Proxy %s  does not in the standby database,skipping...'%proxy)
                 return
         else:
             _one_data = data

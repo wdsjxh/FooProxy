@@ -9,17 +9,19 @@
 #采集器采集数据时间间隔,单位：秒
 COLLECT_TIME_GAP    = 3600*1
 #验证器的最大并发量
-CONCURRENCY         = 300
+CONCURRENCY         = 100
 #验证器一次取出多少条 抓取的 代理进行验证
 VALIDATE_AMOUNT     = 500
 #验证器验证抓取数据频率 ： 秒/次
 VALIDATE_F          = 5
-#验证器一次取出多少条 本地库 的代理进行验证
-LOCAL_AMOUNT        = 500
-#验证器验证本地库频率 ： 秒/次
-VALIDATE_LOCAL      = 60*1
 #验证器请求超时重试次数
 VALIDATE_RETRY      = 5
+#扫描器的最大并发协程数量
+COROUTINE_MAX       = 100
+#扫描器一次取出多少条 本地库 的代理进行验证
+LOCAL_AMOUNT        = 500
+#扫描器验证本地库频率 ： 秒/次
+VALIDATE_LOCAL      = 60*1
 #检测器检测数据库的频率: 秒/次
 DETECT_LOCAL        = 60*1
 #检测器一次取出多少条有效库的代理进行筛选
@@ -37,8 +39,8 @@ STABLE_MIN_COUNT    = 100
 #运行模式,置 1 表示运行，置 0 表示 不运行
 #全置 0 表示只运行 API server
 MODE = {
-    'Collector' : 1,    #代理采集
-    'Validator' : 1,    #验证存储
-    'Rator'     : 1,    #打分存储
-    'Detector'  : 1,    #高分检测
+    'Collector' : 0,    #代理采集
+    'Validator' : 0,    #验证存储
+    'Scanner'   : 1,    #扫描本地库
+    'Detector'  : 0,    #高分检测
 }

@@ -13,6 +13,7 @@ from components.validator   import Validator
 from components.detector    import Detector
 from components.rator       import Rator
 from components.dbhelper    import Database
+from components.scanner     import Scaner
 from multiprocessing        import Pool
 from multiprocessing        import Manager
 from config.DBsettings      import _DB_SETTINGS
@@ -26,6 +27,7 @@ class Workstation(object):
         self.collector = Collector()
         self.validator = Validator()
         self.detector  = Detector()
+        self.scanner   = Scaner()
         self.database  = Database(_DB_SETTINGS)
         self.proxyList = Manager().list()
         self.rator     = Rator(self.database)
@@ -39,11 +41,11 @@ class Workstation(object):
     def run_detector(self,*params):
         self.detector.run()
 
-    def run_rator(self,*params):
-        self.rator.run(self.validator.validate_proxy)
+    def run_scanner(self,*params):
+        self.scanner.run()
 
     def work(self):
-        pool = Pool(4)
+        pool = Pool(5)
         func = []
         for i in MODE:
             if MODE[i]:

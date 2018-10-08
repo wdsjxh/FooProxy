@@ -45,7 +45,7 @@ class Validator(object):
                     stanby_proxies =[proxyList.pop() for x in range(pop_len)]
                     logger.info('Start to verify the collected proxy data,amount: %d '%pop_len)
                     gpool = pool.Pool(CONCURRENCY)
-                    gevent.joinall([gpool.spawn(self.validate_proxy,i,self.rator) for i in stanby_proxies if i])
+                    gevent.joinall([gpool.spawn(self.validate_proxy,i) for i in stanby_proxies if i])
                     logger.info('Validation finished.Left collected proxies:%d'%len(proxyList))
                     time.sleep(VALIDATE_F)
             except Exception as e:
@@ -54,14 +54,8 @@ class Validator(object):
                 logger.info('Validator shuts down.')
                 return
 
-    def validate_proxy(self,proxy,rator=None,save=True):
-        if not rator:
-            raise Exception('No rator received.')
-        if isinstance(proxy,dict):
-            ip   = proxy['ip']
-            port = proxy['port']
-        else:
-            ip, port = proxy.split(':')
+    def validate_proxy(self,proxy):
+        ip, port = proxy.split(':')
         proxies = {}
         session = requests.Session()
         session.mount('http://', HTTPAdapter(max_retries=VALIDATE_RETRY))
@@ -84,15 +78,8 @@ class Validator(object):
                           'resp_time':res['time'],'test_count':0,
                           'fail_count':0,'createdTime':'','combo_success':1,'combo_fail':0,
                           'success_rate':'','stability':0.00}
-                if save:
-                    rator.mark_success(bullet)
-                else:
-                    proxy['anony_type'] = res['anony']
-                    proxy['resp_time']  = res['time']
-                    rator.mark_update(proxy,collected=False)
-            else:
-                if not save:
-                    rator.mark_fail(proxy)
+                self.rator.mark_success(bullet)
+
 
 
 

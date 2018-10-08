@@ -72,7 +72,7 @@ LOG_CONF = 'log/log.conf'
 RUN_FUNC = {
     'Collector' : 'run_collector',
     'Validator' : 'run_validator',
-    'Rator'     : 'run_rator',
+    'Scanner'   : 'run_scanner',
     'Detector'  : 'run_detector',
 }
 #伪造请求头部浏览器

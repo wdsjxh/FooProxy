@@ -49,7 +49,8 @@ def get_proxy(kind='anony'):
                 logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
                 logger.error('No anonymous standby proxy offered.Waiting for a while.')
                 proxy = {}
-        return proxy
+        if proxy: del proxy['_id']
+        return json.dumps(proxy)
     elif kind == 'normal':
         try:
             proxy = get_a_stable_normal()
@@ -62,10 +63,11 @@ def get_proxy(kind='anony'):
                 logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
                 logger.error('No normal standby proxy offered.Waiting for a while.')
                 proxy = {}
-        return proxy
+        if proxy:del proxy['_id']
+        return json.dumps(proxy)
     else:
         logger.error('No type named:%s in the proxy types.' % kind)
-        return {}
+        return json.dumps({})
 
 def get_a_stable_anonymous():
     global anony_stable
