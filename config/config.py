@@ -8,9 +8,9 @@
 
 
 #采集器采集数据时间间隔,单位：秒
-COLLECT_TIME_GAP    = 3600*3
+COLLECT_TIME_GAP    = 3600*1
 #验证器的最大并发量
-CONCURRENCY         = 200
+CONCURRENCY         = 300
 #验证器一次取出多少条 抓取的 代理进行验证
 VALIDATE_AMOUNT     = 500
 #验证器验证抓取数据频率 ： 秒/次
@@ -38,8 +38,8 @@ STABLE_MIN_COUNT    = 100
 #运行模式,置 1 表示运行，置 0 表示 不运行
 #全置 0 表示只运行 API server
 MODE = {
-    'Collector' : 0,    #代理采集
-    'Validator' : 0,    #验证存储
+    'Collector' : 1,    #代理采集
+    'Validator' : 1,    #验证存储
     'Rator'     : 1,    #打分存储
     'Detector'  : 1,    #高分检测
 }

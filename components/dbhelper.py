@@ -104,6 +104,18 @@ class Database(object):
         data = list(self.handler[table].find())
         return data
 
+    def get_many(self,condition,num=1,tname=None):
+        """
+        获取查询条件结果的随机num条数据
+        :param condition: 查询条件，{}表示所有
+        :param num: 随机数据条数,默认1条
+        :param tname: 集合名
+        :return: 返回查询结果[{},{},...]
+        """
+        table = self.table if self.table else tname
+        data = self.handler[table].find(condition).limit(num).skip()
+
+
     def gen_mapped_condition(self,condition):
         for key in condition:
             if isinstance(condition[key], dict):

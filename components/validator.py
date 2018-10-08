@@ -46,7 +46,8 @@ class Validator(object):
                     logger.info('Start to verify the collected proxy data,amount: %d '%pop_len)
                     gpool = pool.Pool(CONCURRENCY)
                     gevent.joinall([gpool.spawn(self.validate_proxy,i,self.rator) for i in stanby_proxies if i])
-                time.sleep(VALIDATE_F)
+                    logger.info('Validation finished.Left collected proxies:%d'%len(proxyList))
+                    time.sleep(VALIDATE_F)
             except Exception as e:
                 logger.error('Error class : %s , msg : %s '%(e.__class__,e))
                 self.rator.end()
@@ -72,6 +73,7 @@ class Validator(object):
                                     timeout=10)
         except Exception as e:
             logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
+            return
         else:
             data = response.json()
             res  = data['msg'][0]
@@ -84,6 +86,7 @@ class Validator(object):
                 if save:
                     rator.mark_success(bullet)
                 else:
+
                     proxy['anony_type'] = res['anony']
                     proxy['resp_time']  = res['time']
                     rator.mark_update(proxy,collected=False)

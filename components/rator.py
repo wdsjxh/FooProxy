@@ -9,7 +9,6 @@ import logging
 import time
 import gevent
 from gevent             import pool
-from gevent             import monkey
 from tools.util         import time_to_date
 from tools.util         import get_ip_addr
 from config.DBsettings  import _TABLE
@@ -20,7 +19,6 @@ from config.config      import LOCAL_AMOUNT
 from config.config      import VALIDATE_LOCAL
 from const.settings     import FAIL_BASIC,SUCCESS_BASIC
 
-monkey.patch_socket()
 logger = logging.getLogger('Rator')
 
 class Rator(object):
@@ -51,8 +49,8 @@ class Rator(object):
                     logger.info('Start to verify the local proxy data,amount: %d ' % pop_len)
                     local_proxies = [self.local_data.pop() for i in range(pop_len)]
                     gpool = pool.Pool(CONCURRENCY)
-                    gevent.joinall([gpool.spawn(target, i,self,False) for i in local_proxies if i])
-                    logger.info('Validation finished.')
+                    gevent.joinall([gpool.apply_async(target, args=(i,self,False)) for i in local_proxies if i])
+                    logger.info('Local validation finished.')
                     time.sleep(VALIDATE_LOCAL)
                 else:
                     self.local_data = self.db.all()
@@ -69,7 +67,6 @@ class Rator(object):
         table_data = self.db.all(tname)
         for i in table_data:
             self.raw_filter.add(':'.join([i['ip'],i['port']]))
-        logger.info('Rator\'s raw filter initialized,length: %d '%len(self.raw_filter))
 
     def mark_success(self,data):
         ip = data['ip']
@@ -137,7 +134,12 @@ class Rator(object):
         elapsed = round(int(data['resp_time'].replace('ms', '')) / 1000, 3)
         score = round(100 - 10 * (elapsed - 1), 2)
         if collected:
-            _one_data = self.db.select({'ip':ip,'port':port})[0]
+            try:
+                _one_data = self.db.select({'ip':ip,'port':port})[0]
+            except Exception as e:
+                logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
+                logger.error('Proxy %s  does not in the standby database,skipping...')
+                return
         else:
             _one_data = data
         if _one_data:

@@ -8,6 +8,7 @@
 import asyncio
 import time
 import logging
+from gevent                 import monkey
 from components.dbhelper    import Database
 from config.DBsettings      import _DB_SETTINGS
 from config.DBsettings      import _TABLE
@@ -18,6 +19,7 @@ from config.config          import STABLE_MIN_RATE
 from config.config          import STABLE_MIN_COUNT
 from config.config          import DELETE_COMBO
 
+monkey.patch_socket()
 logger = logging.getLogger('Detector')
 
 class Detector(object):
@@ -57,7 +59,7 @@ class Detector(object):
     def detect_standby(self,loop):
         if self.standby_data:
             pen = len(self.standby_data)
-            logger.info('Imported the standby database\' data,length: %d ' % pen)
+            logger.info('Imported the "standby" database\' data,length: %d ' % pen)
             pop_len = pen if pen <= DETECT_AMOUNT else DETECT_AMOUNT
             logger.info('Start to detect the local valid data,amount: %d ' % pop_len)
             standby_data = [self.standby_data.pop() for i in range(pop_len)]
@@ -70,7 +72,7 @@ class Detector(object):
     def detect_stable(self,loop):
         if self.stable_data:
             pen = len(self.stable_data)
-            logger.info('Imported the stable database\' data,length: %d ' % pen)
+            logger.info('Imported the "stable" database\' data,length: %d ' % pen)
             pop_len = pen if pen <= DETECT_HIGH_AMOUNT else DETECT_HIGH_AMOUNT
             logger.info('Start to detect the high scored data,amount: %d ' % pop_len)
             stable_data = [self.stable_data.pop() for i in range(pop_len)]
