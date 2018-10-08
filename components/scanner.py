@@ -49,6 +49,7 @@ class Scaner(object):
                     time.sleep(VALIDATE_LOCAL)
                 else:
                     self.standby_data = self.db.all()
+                    self.rator.pull_table(self.db.table)
             except Exception as e:
                 logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
                 self.rator.end()

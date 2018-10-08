@@ -32,3 +32,66 @@
 2018-10-09 02:10:19,888 (SpawnPoolWorker-6 pid:8420) line-68  Detector <detect_standby> - [INFO] : Detection finished.Left standby data length:0
 2018-10-09 02:10:36,849 (SpawnPoolWorker-4 pid:10164) line-44  Scanner <run> - [INFO] : Start the validation of the local "standby" database,length : 832 
 2018-10-09 02:10:36,850 (SpawnPoolWorker-4 pid:10164) line-48  Scanner <run> - [INFO] : Start to verify the standby proxy data,amount: 500 
+2018-10-09 02:10:42,262 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 47.105.146.253:80 
+2018-10-09 02:10:42,267 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 47.105.147.164:80 
+2018-10-09 02:10:42,357 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 47.105.150.46:80 
+2018-10-09 02:10:42,534 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 47.105.150.86:80 
+2018-10-09 02:10:42,675 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 47.105.144.254:80 
+2018-10-09 02:10:44,566 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 176.117.126.22:8080 
+2018-10-09 02:10:47,506 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 213.247.247.233:54060 
+2018-10-09 02:10:54,575 (SpawnPoolWorker-4 pid:10164) line-51  Scanner <run> - [INFO] : Local validation finished.Left standby proxies:332
+2018-10-09 02:11:19,908 (SpawnPoolWorker-6 pid:8420) line-75  Detector <detect_stable> - [INFO] : Imported the "stable" database' data,length: 154 
+2018-10-09 02:11:19,909 (SpawnPoolWorker-6 pid:8420) line-77  Detector <detect_stable> - [INFO] : Start to detect the high scored data,amount: 154 
+2018-10-09 02:11:20,309 (SpawnPoolWorker-6 pid:8420) line-81  Detector <detect_stable> - [INFO] : Detection finished.Left stable data length:0
+2018-10-09 02:11:54,575 (SpawnPoolWorker-4 pid:10164) line-44  Scanner <run> - [INFO] : Start the validation of the local "standby" database,length : 332 
+2018-10-09 02:11:54,576 (SpawnPoolWorker-4 pid:10164) line-48  Scanner <run> - [INFO] : Start to verify the standby proxy data,amount: 332 
+2018-10-09 02:12:00,018 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 103.247.121.115:59092 
+2018-10-09 02:12:05,539 (SpawnPoolWorker-4 pid:10164) line-51  Scanner <run> - [INFO] : Local validation finished.Left standby proxies:0
+2018-10-09 02:12:20,311 (SpawnPoolWorker-6 pid:8420) line-62  Detector <detect_standby> - [INFO] : Imported the "standby" database' data,length: 1296 
+2018-10-09 02:12:20,311 (SpawnPoolWorker-6 pid:8420) line-64  Detector <detect_standby> - [INFO] : Start to detect the local valid data,amount: 1000 
+2018-10-09 02:12:20,496 (SpawnPoolWorker-6 pid:8420) line-68  Detector <detect_standby> - [INFO] : Detection finished.Left standby data length:296
+2018-10-09 02:13:05,561 (SpawnPoolWorker-4 pid:10164) line-44  Scanner <run> - [INFO] : Start the validation of the local "standby" database,length : 1295 
+2018-10-09 02:13:05,562 (SpawnPoolWorker-4 pid:10164) line-48  Scanner <run> - [INFO] : Start to verify the standby proxy data,amount: 500 
+2018-10-09 02:13:11,276 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 176.15.225.193:53281 
+2018-10-09 02:13:11,276 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '176.15.225.193:53281' 
+2018-10-09 02:13:11,315 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 145.255.28.218:53281 
+2018-10-09 02:13:11,315 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '145.255.28.218:53281' 
+2018-10-09 02:13:11,419 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 202.148.2.254:8000 
+2018-10-09 02:13:11,419 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '202.148.2.254:8000' 
+2018-10-09 02:13:11,609 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 181.133.155.42:46143 
+2018-10-09 02:13:11,610 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '181.133.155.42:46143' 
+2018-10-09 02:13:11,678 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 78.102.65.106:8080 
+2018-10-09 02:13:11,679 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '78.102.65.106:8080' 
+2018-10-09 02:13:11,699 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 128.199.134.13:8080 
+2018-10-09 02:13:11,699 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '128.199.134.13:8080' 
+2018-10-09 02:13:11,745 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 177.72.1.102:8080 
+2018-10-09 02:13:11,745 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '177.72.1.102:8080' 
+2018-10-09 02:13:11,920 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 190.216.69.125:8080 
+2018-10-09 02:13:11,920 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '190.216.69.125:8080' 
+2018-10-09 02:13:12,516 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 103.1.94.69:8080 
+2018-10-09 02:13:12,517 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '103.1.94.69:8080' 
+2018-10-09 02:13:12,728 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 167.249.168.74:8080 
+2018-10-09 02:13:12,728 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '167.249.168.74:8080' 
+2018-10-09 02:13:14,340 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 2.83.152.73:49052 
+2018-10-09 02:13:14,341 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '2.83.152.73:49052' 
+2018-10-09 02:13:16,728 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 47.105.149.49:80 
+2018-10-09 02:13:16,728 (SpawnPoolWorker-4 pid:10164) line-102  Rator <mark_fail> - [ERROR] : Error class : <class 'KeyError'> , msg : '47.105.149.49:80' 
+2018-10-09 02:13:17,674 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 47.105.149.148:80 
+2018-10-09 02:13:20,503 (SpawnPoolWorker-6 pid:8420) line-62  Detector <detect_standby> - [INFO] : Imported the "standby" database' data,length: 296 
+2018-10-09 02:13:20,503 (SpawnPoolWorker-6 pid:8420) line-64  Detector <detect_standby> - [INFO] : Start to detect the local valid data,amount: 296 
+2018-10-09 02:13:20,773 (SpawnPoolWorker-6 pid:8420) line-68  Detector <detect_standby> - [INFO] : Detection finished.Left standby data length:0
+2018-10-09 02:13:20,774 (SpawnPoolWorker-6 pid:8420) line-75  Detector <detect_stable> - [INFO] : Imported the "stable" database' data,length: 154 
+2018-10-09 02:13:20,774 (SpawnPoolWorker-6 pid:8420) line-77  Detector <detect_stable> - [INFO] : Start to detect the high scored data,amount: 154 
+2018-10-09 02:13:21,039 (SpawnPoolWorker-6 pid:8420) line-115  Detector <_detect_stable> - [WARNING] : The high scored proxy: 46.188.41.247:60511 is not that stable now.It's Removed.
+2018-10-09 02:13:21,227 (SpawnPoolWorker-6 pid:8420) line-81  Detector <detect_stable> - [INFO] : Detection finished.Left stable data length:0
+2018-10-09 02:13:22,210 (SpawnPoolWorker-4 pid:10164) line-51  Scanner <run> - [INFO] : Local validation finished.Left standby proxies:795
+2018-10-09 02:14:22,210 (SpawnPoolWorker-4 pid:10164) line-44  Scanner <run> - [INFO] : Start the validation of the local "standby" database,length : 795 
+2018-10-09 02:14:22,211 (SpawnPoolWorker-4 pid:10164) line-48  Scanner <run> - [INFO] : Start to verify the standby proxy data,amount: 500 
+2018-10-09 02:14:27,693 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 109.167.243.222:33230 
+2018-10-09 02:14:27,702 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 47.105.147.186:80 
+2018-10-09 02:14:27,757 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 89.47.98.105:38157 
+2018-10-09 02:14:28,660 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 186.249.185.250:8080 
+2018-10-09 02:14:29,137 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 93.91.152.255:21231 
+2018-10-09 02:14:31,848 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 213.80.166.5:35509 
+2018-10-09 02:14:36,427 (SpawnPoolWorker-4 pid:10164) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 89.206.40.249:32894 
+2018-10-09 02:14:38,742 (SpawnPoolWorker-4 pid:10164) line-51  Scanner <run> - [INFO] : Local validation finished.Left standby proxies:295
