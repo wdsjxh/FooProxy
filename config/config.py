@@ -27,6 +27,8 @@ DETECT_LOCAL        = 60*1
 DETECT_AMOUNT       = 1000
 #检测器一次取出多少条高分稳定数据库的代理进行检测
 DETECT_HIGH_AMOUNT  = 1000
+#高分稳定数据库代理数据连续多少次无效则从稳定数据库中剔除
+DELETE_COMBO        = 30
 #代理IP成功率的最低要求,低于此要求均删除,100次周期测试 0.2=20%
 MIN_SUCCESS_RATE    = 0.2
 #有效代理数据库数据转至高分稳定数据库的成功率最低要求 0.8=80%
@@ -37,7 +39,7 @@ STABLE_MIN_COUNT    = 100
 #全置 0 表示只运行 API server
 MODE = {
     'Collector' : 0,    #代理采集
-    'Validator' : 1,    #验证存储
+    'Validator' : 0,    #验证存储
     'Rator'     : 1,    #打分存储
-    'Detector'  : 0,    #高分检测
+    'Detector'  : 1,    #高分检测
 }

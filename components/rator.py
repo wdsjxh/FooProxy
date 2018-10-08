@@ -18,6 +18,7 @@ from config.config      import CONCURRENCY
 from config.config      import MIN_SUCCESS_RATE
 from config.config      import LOCAL_AMOUNT
 from config.config      import VALIDATE_LOCAL
+from const.settings     import FAIL_BASIC,SUCCESS_BASIC
 
 monkey.patch_socket()
 logger = logging.getLogger('Rator')
@@ -63,7 +64,8 @@ class Rator(object):
                 return
 
     def pull_table(self,tname):
-        if not tname:return
+        if not tname:
+            return
         table_data = self.db.all(tname)
         for i in table_data:
             self.raw_filter.add(':'.join([i['ip'],i['port']]))
@@ -105,7 +107,7 @@ class Rator(object):
             _success_rate = _one_data['success_rate']
             _combo_fail = _one_data['combo_fail']
             valid_time = time_to_date(int(time.time()))
-            update_data['score'] = round(_score-5*((_f_count+1)/(_count+1))*(_combo_fail+1),2)
+            update_data['score'] = round(_score-FAIL_BASIC*((_f_count+1)/(_count+1))*(_combo_fail+1),2)
             update_data['combo_fail'] = _combo_fail+1
             update_data['combo_success'] = 0
             update_data['test_count'] = _count+1
@@ -145,7 +147,7 @@ class Rator(object):
             _address = _one_data['address']
             _combo_success = _one_data['combo_success']
             _success_rate = round(float(_one_data['success_rate'].replace('%',''))/100,4)
-            score = round((score+_score*_count)/(_count+1)+0.5*(_combo_success+1)*_success_rate,2)
+            score = round((score+_score*_count)/(_count+1)+SUCCESS_BASIC*(_combo_success+1)*_success_rate,2)
             address = get_ip_addr(ip) if _address=='unknown' else _address
             success_rate = round(1-(_f_count/(_count+1)),3)
             stability = round(score*(_count+1)*success_rate/PRECISION,4)

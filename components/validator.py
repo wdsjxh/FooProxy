@@ -10,19 +10,19 @@ import time
 import gevent
 import requests
 import logging
-from gevent             import pool
-from gevent             import monkey
-from config.DBsettings import _DB_SETTINGS
-from config.DBsettings import _TABLE
-from config.config      import CONCURRENCY
-from config.config      import VALIDATE_AMOUNT
-from config.config      import VALIDATE_F
-from const.settings     import proxy_validate_url
-from const.settings     import headers
-from config.config      import VALIDATE_RETRY
-from components.rator import Rator
-from components.dbhelper import Database
-from requests.adapters  import HTTPAdapter
+from gevent                 import pool
+from gevent                 import monkey
+from config.DBsettings      import _DB_SETTINGS
+from config.DBsettings      import _TABLE
+from config.config          import CONCURRENCY
+from config.config          import VALIDATE_AMOUNT
+from config.config          import VALIDATE_F
+from const.settings         import proxy_validate_url
+from const.settings         import headers
+from config.config          import VALIDATE_RETRY
+from components.rator       import Rator
+from components.dbhelper    import Database
+from requests.adapters      import HTTPAdapter
 
 monkey.patch_socket()
 logger = logging.getLogger('Validator')
@@ -57,7 +57,7 @@ class Validator(object):
         if not rator:
             raise Exception('No rator received.')
         if isinstance(proxy,dict):
-            ip = proxy['ip']
+            ip   = proxy['ip']
             port = proxy['port']
         else:
             ip, port = proxy.split(':')
@@ -74,7 +74,7 @@ class Validator(object):
             logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
         else:
             data = response.json()
-            res = data['msg'][0]
+            res  = data['msg'][0]
             if 'anony' in res and 'time' in res:
                 bullet = {'ip':ip,'port':port,'anony_type':res['anony'],
                           'address':'','score':0,'valid_time':'',
@@ -84,8 +84,8 @@ class Validator(object):
                 if save:
                     rator.mark_success(bullet)
                 else:
-                    proxy['anony_type']=res['anony']
-                    proxy['resp_time'] = res['time']
+                    proxy['anony_type'] = res['anony']
+                    proxy['resp_time']  = res['time']
                     rator.mark_update(proxy,collected=False)
             else:
                 if not save:

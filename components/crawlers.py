@@ -41,5 +41,4 @@ def ip66():
     data = [i[0] for i in data if i]
     return data
 
-
 builtin_crawlers = [nyloner,ip66,]
