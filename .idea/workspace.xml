@@ -5,10 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APIserver/apiserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/APIserver/apiserver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/rator.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/rator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/scanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/scanner.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/validator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/workstation.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/workstation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/const/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/const/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/log.conf" beforeDir="false" afterPath="$PROJECT_DIR$/log/log.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/log.error" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/log/log.text" beforeDir="false" />
@@ -20,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/FooProxy$main.coverage" NAME="main Coverage Results" MODIFIED="1539016085508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FooProxy$main.coverage" NAME="main Coverage Results" MODIFIED="1539016690755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FooProxy$apiserver.coverage" NAME="apiserver Coverage Results" MODIFIED="1539010626676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/APIserver" />
     <SUITE FILE_PATH="coverage/FooProxy$dbhelper.coverage" NAME="dbhelper Coverage Results" MODIFIED="1538980093138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helper" />
     <SUITE FILE_PATH="coverage/FooProxy$workstation.coverage" NAME="workstation Coverage Results" MODIFIED="1538847195567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/const" />
@@ -37,36 +37,36 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="conf" value="7" />
+          <entry key="conf" value="8" />
           <entry key="createTable" value="6" />
           <entry key="debug" value="4" />
-          <entry key="error" value="44" />
-          <entry key="py" value="107" />
-          <entry key="text" value="30" />
+          <entry key="error" value="45" />
+          <entry key="py" value="111" />
+          <entry key="text" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="85" />
-          <entry key="Python" value="107" />
+          <entry key="PLAIN_TEXT" value="90" />
+          <entry key="Python" value="111" />
           <entry key="SQL" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="762" />
-          <entry key="conf" value="218" />
+          <entry key="conf" value="226" />
           <entry key="createTable" value="97" />
           <entry key="dummy" value="21" />
-          <entry key="error" value="2" />
-          <entry key="py" value="17891" />
-          <entry key="text" value="1" />
+          <entry key="error" value="3" />
+          <entry key="py" value="17935" />
+          <entry key="text" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="242" />
-          <entry key="Python" value="18653" />
+          <entry key="PLAIN_TEXT" value="252" />
+          <entry key="Python" value="18697" />
           <entry key="SQL" value="97" />
         </counts>
       </usages-collector>
@@ -77,10 +77,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/rator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="98" column="20" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+            <state relative-caret-position="-2080">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
-                <element signature="e#106#117#0" expanded="true" />
                 <element signature="e#680#809#0" />
                 <element signature="e#840#938#0" />
                 <element signature="e#967#982#0" />
@@ -90,38 +89,42 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/validator.py">
+        <entry file="file://$PROJECT_DIR$/components/collector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="80" column="47" lean-forward="true" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
+            <state relative-caret-position="700">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
-                <element signature="e#108#119#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/components/scanner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
-              <folding>
-                <element signature="e#107#118#0" expanded="true" />
-                <marker date="1539016080985" expanded="true" signature="770:771" ph="..." />
+                <element signature="e#106#117#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/workstation.py">
+        <entry file="file://$PROJECT_DIR$/components/crawlers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+            <state relative-caret-position="25">
+              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/validator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/scanner.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
               <folding>
-                <element signature="e#107#121#0" expanded="true" />
-                <marker date="1539014333488" expanded="true" signature="1255:1288" ph="..." />
+                <marker date="1539019280271" expanded="true" signature="657:658" ph="..." />
               </folding>
             </state>
           </provider>
@@ -130,8 +133,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/const/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
-              <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+            <state relative-caret-position="148">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log/log.error">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/log/log.text">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/detector.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1913">
+              <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
+              <folding>
+                <element signature="e#107#121#0" expanded="true" />
+                <marker date="1538993774095" expanded="true" signature="2477:3163" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,8 +165,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="170">
+              <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -178,24 +204,24 @@
         <option value="$PROJECT_DIR$/Helper/dbhelper.py" />
         <option value="$PROJECT_DIR$/const/workstation.py" />
         <option value="$PROJECT_DIR$/custom/custom.py" />
-        <option value="$PROJECT_DIR$/log/log.text" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/components/detector.py" />
-        <option value="$PROJECT_DIR$/log/log.error" />
         <option value="$PROJECT_DIR$/components/collector.py" />
         <option value="$PROJECT_DIR$/components/crawlers.py" />
         <option value="$PROJECT_DIR$/components/dbhelper.py" />
         <option value="$PROJECT_DIR$/config/DBsettings.py" />
         <option value="$PROJECT_DIR$/tools/threads.py" />
         <option value="$PROJECT_DIR$/tools/util.py" />
-        <option value="$PROJECT_DIR$/APIserver/apiserver.py" />
-        <option value="$PROJECT_DIR$/components/workstation.py" />
         <option value="$PROJECT_DIR$/const/settings.py" />
-        <option value="$PROJECT_DIR$/components/validator.py" />
-        <option value="$PROJECT_DIR$/components/rator.py" />
         <option value="$PROJECT_DIR$/log/log.conf" />
+        <option value="$PROJECT_DIR$/APIserver/apiserver.py" />
         <option value="$PROJECT_DIR$/config/config.py" />
+        <option value="$PROJECT_DIR$/components/workstation.py" />
+        <option value="$PROJECT_DIR$/components/validator.py" />
         <option value="$PROJECT_DIR$/components/scanner.py" />
+        <option value="$PROJECT_DIR$/components/rator.py" />
+        <option value="$PROJECT_DIR$/log/log.error" />
+        <option value="$PROJECT_DIR$/log/log.text" />
       </list>
     </option>
   </component>
@@ -424,12 +450,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10127932" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10127932" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.30694142" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.3275488" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.42407808" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -500,23 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/collector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#106#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/crawlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/dbhelper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -525,17 +534,6 @@
             <element signature="e#107#121#0" expanded="true" />
             <marker date="1539007428024" expanded="true" signature="3097:3476" ph="..." />
             <marker date="1539007428024" expanded="true" signature="3501:3977" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/detector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1511">
-          <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
-          <folding>
-            <element signature="e#107#121#0" expanded="true" />
-            <marker date="1538993774095" expanded="true" signature="2477:3163" ph="..." />
           </folding>
         </state>
       </provider>
@@ -584,61 +582,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/log.text">
+    <entry file="file://$PROJECT_DIR$/log/log.conf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2439">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="25">
+          <caret line="1" column="62" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/APIserver/apiserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="69" column="29" lean-forward="true" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+        <state relative-caret-position="-1011">
+          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
           <folding>
             <element signature="e#107#120#0" expanded="true" />
-            <element signature="e#1160#2461#0" />
-            <element signature="e#2497#2785#0" />
-            <element signature="e#2818#3111#0" />
-            <element signature="e#3148#3445#0" />
-            <element signature="e#3479#3781#0" />
-            <marker date="1539011456058" expanded="true" signature="982:983" ph="..." />
-            <marker date="1539011456058" expanded="true" signature="3248:3893" ph="..." />
+            <marker date="1539016596833" expanded="true" signature="982:983" ph="..." />
+            <marker date="1539016596833" expanded="true" signature="3306:3951" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log/log.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/workstation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+        <state relative-caret-position="414">
+          <caret line="44" column="19" selection-start-line="44" selection-start-column="19" selection-end-line="44" selection-end-column="19" />
           <folding>
             <element signature="e#107#121#0" expanded="true" />
-            <marker date="1539014333488" expanded="true" signature="1255:1288" ph="..." />
+            <marker date="1539016672171" expanded="true" signature="1161:1194" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/const/settings.py">
+    <entry file="file://$PROJECT_DIR$/components/detector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="74" column="16" lean-forward="true" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+        <state relative-caret-position="1913">
+          <caret line="82" column="11" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
+          <folding>
+            <element signature="e#107#121#0" expanded="true" />
+            <marker date="1538993774095" expanded="true" signature="2477:3163" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/validator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/scanner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <marker date="1539019280271" expanded="true" signature="657:658" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/rator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="98" column="20" lean-forward="true" selection-start-line="98" selection-start-column="20" selection-end-line="98" selection-end-column="20" />
+        <state relative-caret-position="-2080">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
-            <element signature="e#106#117#0" expanded="true" />
             <element signature="e#680#809#0" />
             <element signature="e#840#938#0" />
             <element signature="e#967#982#0" />
@@ -646,40 +652,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/log.error">
+    <entry file="file://$PROJECT_DIR$/components/collector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29901">
-          <caret column="157" selection-start-column="157" selection-end-column="157" />
+        <state relative-caret-position="700">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#106#117#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/validator.py">
+    <entry file="file://$PROJECT_DIR$/components/crawlers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="80" column="47" lean-forward="true" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
-          <folding>
-            <element signature="e#108#119#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="25">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="21" column="25" lean-forward="true" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="170">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/scanner.py">
+    <entry file="file://$PROJECT_DIR$/const/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="47" column="69" selection-start-line="47" selection-start-column="69" selection-end-line="47" selection-end-column="69" />
-          <folding>
-            <element signature="e#107#118#0" expanded="true" />
-            <marker date="1539016080985" expanded="true" signature="770:771" ph="..." />
-          </folding>
+        <state relative-caret-position="148">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/log.error">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/log.text">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

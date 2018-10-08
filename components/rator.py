@@ -6,22 +6,13 @@
     @date    : 2018-10-05
 """
 import time
-import gevent
 import logging
-from gevent             import pool
-from gevent             import monkey
 from tools.util         import time_to_date
 from tools.util         import get_ip_addr
 from config.DBsettings  import _TABLE
 from const.settings     import PRECISION
-from config.config      import CONCURRENCY
 from config.config      import MIN_SUCCESS_RATE
-from config.config      import LOCAL_AMOUNT
-from config.config      import VALIDATE_LOCAL
 from const.settings     import FAIL_BASIC,SUCCESS_BASIC
-
-monkey.patch_socket()
-monkey.patch_os()
 
 logger = logging.getLogger('Rator')
 

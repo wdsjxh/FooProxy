@@ -28,9 +28,7 @@ class Workstation(object):
         self.validator = Validator()
         self.detector  = Detector()
         self.scanner   = Scaner()
-        self.database  = Database(_DB_SETTINGS)
         self.proxyList = Manager().list()
-        self.rator     = Rator(self.database)
 
     def run_validator(self,proxyList):
         self.validator.run(proxyList)

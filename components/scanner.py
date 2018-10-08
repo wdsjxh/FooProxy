@@ -8,7 +8,6 @@
 
 import time
 import json
-import requests
 import logging
 import aiohttp
 import  asyncio
@@ -19,10 +18,8 @@ from config.config          import LOCAL_AMOUNT
 from config.config          import VALIDATE_LOCAL
 from const.settings         import proxy_validate_url
 from const.settings         import headers
-from config.config          import VALIDATE_RETRY
 from components.rator       import Rator
 from components.dbhelper    import Database
-from requests.adapters      import HTTPAdapter
 
 logger = logging.getLogger('Scanner')
 
@@ -62,15 +59,12 @@ class Scaner(object):
     async def validate(self, proxy,semaphore):
         ip = proxy['ip']
         port = proxy['port']
-        session = requests.Session()
-        session.mount('http://', HTTPAdapter(max_retries=VALIDATE_RETRY))
-        session.mount('https://', HTTPAdapter(max_retries=VALIDATE_RETRY))
         # 可设置响应超时对API服务器请求代理，没写
         async with semaphore:
             async with aiohttp.ClientSession() as session:
                 try:
                     async with session.get(proxy_validate_url.format(ip, port),
-                                   headers=headers) as response:
+                                   headers=headers,timeout=15) as response:
                         data = await response.text(encoding='utf-8')
                         data = json.loads(data)
                 except Exception as e:

@@ -35,6 +35,8 @@ def index():
     return 'Welcome to the FooProxy API server homepage.'
 
 @app.route('/proxy')
+@app.route('/proxy/')
+@app.route('/proxy/<string:kind>/')
 @app.route('/proxy/<string:kind>')
 def get_proxy(kind='anony'):
     if kind=='anony':

@@ -65,7 +65,7 @@ class Validator(object):
             response = session.get(proxy_validate_url.format(ip,port),
                                     proxies = proxies,
                                     headers=headers,
-                                    timeout=10)
+                                    timeout=15)
         except Exception as e:
             logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
             return

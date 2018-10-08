@@ -1,14 +1,34 @@
-2018-10-09 00:27:53,571 (MainProcess pid:6888) line-55  root <work> - [INFO] : Workstation process pool starting.....OK
-2018-10-09 00:27:53,715 (MainProcess pid:6888) line-88  werkzeug <_log> - [INFO] :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2018-10-09 00:28:00,580 (SpawnPoolWorker-3 pid:9176) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 61.149.5.100:53281 
-2018-10-09 00:28:00,730 (SpawnPoolWorker-3 pid:9176) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 113.181.47.90:8080 
-2018-10-09 00:28:01,034 (SpawnPoolWorker-3 pid:9176) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 186.225.50.211:57625 
-2018-10-09 00:28:01,892 (SpawnPoolWorker-3 pid:9176) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 5.160.137.30:8080 
-2018-10-09 00:28:07,568 (MainProcess pid:5960) line-55  root <work> - [INFO] : Workstation process pool starting.....OK
-2018-10-09 00:28:07,602 (MainProcess pid:5960) line-88  werkzeug <_log> - [INFO] :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-2018-10-09 00:28:16,624 (SpawnPoolWorker-3 pid:9360) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 122.102.29.82:23500 
-2018-10-09 00:28:19,380 (SpawnPoolWorker-3 pid:9360) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 109.248.218.241:41258 
-2018-10-09 00:28:19,623 (SpawnPoolWorker-3 pid:9360) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 190.9.60.10:53281 
-2018-10-09 00:28:20,869 (SpawnPoolWorker-3 pid:9360) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 181.196.252.74:53281 
-2018-10-09 00:28:23,072 (SpawnPoolWorker-3 pid:9360) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 89.184.13.38:30970 
-2018-10-09 00:28:28,014 (SpawnPoolWorker-3 pid:9360) line-98  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 195.122.236.246:8080 
+2018-10-09 02:10:19,582 (SpawnPoolWorker-6 pid:8420) line-62  Detector <detect_standby> - [INFO] : Imported the "standby" database' data,length: 332 
+2018-10-09 02:10:19,582 (SpawnPoolWorker-6 pid:8420) line-64  Detector <detect_standby> - [INFO] : Start to detect the local valid data,amount: 332 
+2018-10-09 02:10:19,659 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 47.100.41.53:8888 , put it into the stable database.
+2018-10-09 02:10:19,667 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 188.43.4.117:60577 , put it into the stable database.
+2018-10-09 02:10:19,670 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 35.199.96.12:80 , put it into the stable database.
+2018-10-09 02:10:19,678 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 23.253.218.68:3128 , put it into the stable database.
+2018-10-09 02:10:19,680 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 138.68.132.204:8080 , put it into the stable database.
+2018-10-09 02:10:19,683 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 195.189.60.23:3128 , put it into the stable database.
+2018-10-09 02:10:19,685 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 165.227.37.243:8080 , put it into the stable database.
+2018-10-09 02:10:19,688 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 125.39.9.34:9000 , put it into the stable database.
+2018-10-09 02:10:19,716 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 47.104.221.45:80 , put it into the stable database.
+2018-10-09 02:10:19,719 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 39.135.11.171:8080 , put it into the stable database.
+2018-10-09 02:10:19,721 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 159.89.133.218:3128 , put it into the stable database.
+2018-10-09 02:10:19,729 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 111.230.183.90:8000 , put it into the stable database.
+2018-10-09 02:10:19,733 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 78.73.14.128:43891 , put it into the stable database.
+2018-10-09 02:10:19,736 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 60.217.153.19:8060 , put it into the stable database.
+2018-10-09 02:10:19,738 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 200.192.156.56:33595 , put it into the stable database.
+2018-10-09 02:10:19,740 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 187.190.218.136:3128 , put it into the stable database.
+2018-10-09 02:10:19,812 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 39.135.11.102:8080 , put it into the stable database.
+2018-10-09 02:10:19,816 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 39.137.69.7:80 , put it into the stable database.
+2018-10-09 02:10:19,837 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 185.216.35.170:3128 , put it into the stable database.
+2018-10-09 02:10:19,839 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 95.43.222.151:35524 , put it into the stable database.
+2018-10-09 02:10:19,841 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 213.248.24.193:42597 , put it into the stable database.
+2018-10-09 02:10:19,847 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 153.222.84.148:3128 , put it into the stable database.
+2018-10-09 02:10:19,853 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 119.190.196.136:8060 , put it into the stable database.
+2018-10-09 02:10:19,856 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 125.25.80.57:30929 , put it into the stable database.
+2018-10-09 02:10:19,860 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 39.105.91.179:80 , put it into the stable database.
+2018-10-09 02:10:19,877 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 167.99.61.138:3128 , put it into the stable database.
+2018-10-09 02:10:19,882 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 5.197.183.222:8080 , put it into the stable database.
+2018-10-09 02:10:19,884 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 139.59.185.116:8080 , put it into the stable database.
+2018-10-09 02:10:19,887 (SpawnPoolWorker-6 pid:8420) line-98  Detector <_detect_standby> - [INFO] : Find a stable proxy: 111.230.32.95:3128 , put it into the stable database.
+2018-10-09 02:10:19,888 (SpawnPoolWorker-6 pid:8420) line-68  Detector <detect_standby> - [INFO] : Detection finished.Left standby data length:0
+2018-10-09 02:10:36,849 (SpawnPoolWorker-4 pid:10164) line-44  Scanner <run> - [INFO] : Start the validation of the local "standby" database,length : 832 
+2018-10-09 02:10:36,850 (SpawnPoolWorker-4 pid:10164) line-48  Scanner <run> - [INFO] : Start to verify the standby proxy data,amount: 500 
