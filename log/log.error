@@ -1,0 +1,50 @@
+2018-10-09 19:13:22,669 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:13:23,673 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:13:24,665 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:13:35,826 (SpawnPoolWorker-5 pid:13924) line-71  Validator <validate_proxy> - [ERROR] : Error class : <class 'requests.exceptions.ConnectionError'> , msg : HTTPConnectionPool(host='www.moguproxy.com', port=80): Max retries exceeded with url: /proxy/checkIp/ipList?ip_ports%5B%5D=109.195.209.174%3A8080 (Caused by ReadTimeoutError("HTTPConnectionPool(host='www.moguproxy.com', port=80): Read timed out. (read timeout=15)")) 
+2018-10-09 19:14:40,673 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:15:25,417 (MainProcess pid:7000) line-1761  flask.app <log_exception> - [ERROR] : Exception on /proxy/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\CODE\FooProxy\APIserver\apiserver.py", line 95, in get_proxy
+    if proxy:del proxy['_id']
+KeyError: '_id'
+2018-10-09 19:15:59,668 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:15:59,669 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:16:00,655 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:16:02,663 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:16:07,670 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:18:41,667 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:21:06,661 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:21:11,666 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:26:10,668 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:32:26,658 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:36:13,670 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:37:35,664 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:37:35,664 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:37:39,661 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:41:19,669 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:51:21,670 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:43,286 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'aiohttp.client_exceptions.ClientOSError'> , msg : [WinError 10054] 远程主机强迫关闭了一个现有的连接。 
+2018-10-09 19:53:52,671 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:52,672 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:52,672 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:55,660 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:55,661 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:55,661 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:56,659 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:56,661 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:57,660 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:57,661 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 19:53:57,661 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  

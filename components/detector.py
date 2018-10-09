@@ -86,7 +86,7 @@ class Detector(object):
         ip = data['ip']
         port = data['port']
         proxy = ':'.join([ip,port])
-        if data['test_count']<STABLE_MIN_COUNT or data['success_rate'] < str(STABLE_MIN_RATE*100)+'%':
+        if data['test_count']<STABLE_MIN_COUNT or round(float(data['success_rate'].replace('%',''))/100,4) < STABLE_MIN_RATE:
             return
         condition = {'ip':ip,'port':port}
         _one_data = self.stableDB.select(condition)
