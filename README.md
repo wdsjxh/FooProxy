@@ -13,6 +13,7 @@
 * Windows 7 64bits
 > **需安装的库**
 * pymongo
+* flask
 * gevent
 * requests
 * bs4
@@ -80,4 +81,7 @@
  ![备用有效数据库](https://github.com/01ly/FooProxy/blob/dev/pic/2018-10-09_2-07-47.png)
  2. **高分稳定数据库**
  ![高分稳定数据库](https://github.com/01ly/FooProxy/blob/dev/pic/2018-10-09_2-09-42.png)
-
+ ## 后话
+ * 经过连续两天的测试，程序运行正常
+ * 只有一个数据采集爬虫的情况下，一个小时采集一次，一次最多1000条数据，10个小时内稳定的有效代理995左右，高分稳定的有200条左右，主要在于
+  代理网站的质量。
