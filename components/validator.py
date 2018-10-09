@@ -39,6 +39,7 @@ class Validator(object):
         while 1:
             try:
                 if proxyList:
+                    self.rator.pull_table(self.db.table)
                     pen = len(proxyList)
                     logger.info('Proxies from Collector is detected,length : %d '%pen)
                     pop_len =  pen if pen <= VALIDATE_AMOUNT else VALIDATE_AMOUNT

@@ -25,7 +25,7 @@ class Rator(object):
     def begin(self):
         self.db.table = _TABLE['standby']
         self.db.connect()
-        self.pull_table(self.db.table)
+
 
     def end(self):
         self.db.close()
