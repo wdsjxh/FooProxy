@@ -92,6 +92,7 @@ def get_proxy():
                 except Exception as e:
                     logger.error('No data in standby database.Wait for a while.')
                     proxy = {}
+    if proxy:del proxy['_id']
     return json.dumps(proxy)
 
 def get_a_stable_anonymous():

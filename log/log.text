@@ -1,0 +1,141 @@
+2018-10-09 15:01:53,404 (MainProcess pid:25232) line-53  root <work> - [INFO] : Workstation process pool starting.....OK
+2018-10-09 15:01:53,448 (MainProcess pid:25232) line-88  werkzeug <_log> - [INFO] :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2018-10-09 15:01:54,938 (SpawnPoolWorker-5 pid:24628) line-37  Validator <run> - [INFO] : Running Validator.
+2018-10-09 15:01:54,940 (SpawnPoolWorker-3 pid:10524) line-27  Collector <find_crawlers> - [INFO] : Find  2  data collectors.
+2018-10-09 15:01:55,118 (SpawnPoolWorker-4 pid:24832) line-34  Scanner <run> - [INFO] : Running Scanner.
+2018-10-09 15:01:55,199 (SpawnPoolWorker-4 pid:24832) line-41  Scanner <run> - [INFO] : Start the validation of the local "standby" database,length : 1012 
+2018-10-09 15:01:55,200 (SpawnPoolWorker-4 pid:24832) line-45  Scanner <run> - [INFO] : Start to verify the standby proxy data,amount: 500 
+2018-10-09 15:01:55,650 (SpawnPoolWorker-2 pid:25256) line-43  Detector <run> - [INFO] : Running Detector.
+2018-10-09 15:01:56,584 (SpawnPoolWorker-3 pid:10524) line-43  Collector <run> - [INFO] : Received 3 proxy data from a spider.
+2018-10-09 15:01:56,585 (SpawnPoolWorker-3 pid:10524) line-43  Collector <run> - [INFO] : Received 1000 proxy data from a spider.
+2018-10-09 15:01:56,587 (SpawnPoolWorker-5 pid:24628) line-43  Validator <run> - [INFO] : Proxies from Collector is detected,length : 999 
+2018-10-09 15:01:56,608 (SpawnPoolWorker-5 pid:24628) line-46  Validator <run> - [INFO] : Start to verify the collected proxy data,amount: 500 
+2018-10-09 15:01:59,205 (MainProcess pid:25232) line-88  werkzeug <_log> - [INFO] : 127.0.0.1 - - [09/Oct/2018 15:01:59] "GET / HTTP/1.1" 200 -
+2018-10-09 15:02:01,123 (SpawnPoolWorker-4 pid:24832) line-88  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 67.143.28.62:87 
+2018-10-09 15:02:03,344 (SpawnPoolWorker-4 pid:24832) line-88  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 89.188.111.101:41258 
+2018-10-09 15:02:11,600 (MainProcess pid:25232) line-88  werkzeug <_log> - [INFO] : 127.0.0.1 - - [09/Oct/2018 15:02:11] "GET /proxy/anony HTTP/1.1" 200 -
+2018-10-09 15:02:14,458 (SpawnPoolWorker-4 pid:24832) line-48  Scanner <run> - [INFO] : Local validation finished.Left standby proxies:512
+2018-10-09 15:02:18,631 (MainProcess pid:25232) line-88  werkzeug <_log> - [INFO] : 127.0.0.1 - - [09/Oct/2018 15:02:18] "GET /proxy/anony HTTP/1.1" 200 -
+2018-10-09 15:02:23,195 (MainProcess pid:25232) line-88  werkzeug <_log> - [INFO] : 127.0.0.1 - - [09/Oct/2018 15:02:23] "GET /proxy HTTP/1.1" 301 -
+2018-10-09 15:02:23,199 (MainProcess pid:25232) line-1761  flask.app <log_exception> - [ERROR] : Exception on /proxy/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\CODE\FooProxy\APIserver\apiserver.py", line 95, in get_proxy
+    return json.dumps(proxy)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ObjectId is not JSON serializable
+2018-10-09 15:02:23,209 (MainProcess pid:25232) line-88  werkzeug <_log> - [INFO] : 127.0.0.1 - - [09/Oct/2018 15:02:23] "GET /proxy/ HTTP/1.1" 500 -
+2018-10-09 15:02:27,716 (MainProcess pid:25232) line-88  werkzeug <_log> - [INFO] : 127.0.0.1 - - [09/Oct/2018 15:02:27] "GET /proxy/ HTTP/1.1" 200 -
+2018-10-09 15:02:34,669 (MainProcess pid:25232) line-1761  flask.app <log_exception> - [ERROR] : Exception on /proxy/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\CODE\FooProxy\APIserver\apiserver.py", line 95, in get_proxy
+    return json.dumps(proxy)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ObjectId is not JSON serializable
+2018-10-09 15:02:34,670 (MainProcess pid:25232) line-88  werkzeug <_log> - [INFO] : 127.0.0.1 - - [09/Oct/2018 15:02:34] "GET /proxy/ HTTP/1.1" 500 -
+2018-10-09 15:02:36,930 (MainProcess pid:25232) line-1761  flask.app <log_exception> - [ERROR] : Exception on /proxy/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\CODE\FooProxy\APIserver\apiserver.py", line 95, in get_proxy
+    return json.dumps(proxy)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ObjectId is not JSON serializable
+2018-10-09 15:02:36,933 (MainProcess pid:25232) line-88  werkzeug <_log> - [INFO] : 127.0.0.1 - - [09/Oct/2018 15:02:36] "GET /proxy/ HTTP/1.1" 500 -
+2018-10-09 15:02:37,544 (MainProcess pid:25232) line-1761  flask.app <log_exception> - [ERROR] : Exception on /proxy/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\CODE\FooProxy\APIserver\apiserver.py", line 95, in get_proxy
+    return json.dumps(proxy)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type ObjectId is not JSON serializable
+2018-10-09 15:02:37,545 (MainProcess pid:25232) line-88  werkzeug <_log> - [INFO] : 127.0.0.1 - - [09/Oct/2018 15:02:37] "GET /proxy/ HTTP/1.1" 500 -
+2018-10-09 15:02:55,722 (SpawnPoolWorker-2 pid:25256) line-61  Detector <detect_standby> - [INFO] : Imported the "standby" database' data,length: 1012 
+2018-10-09 15:02:55,723 (SpawnPoolWorker-2 pid:25256) line-63  Detector <detect_standby> - [INFO] : Start to detect the local valid data,amount: 1000 
+2018-10-09 15:02:56,395 (SpawnPoolWorker-2 pid:25256) line-67  Detector <detect_standby> - [INFO] : Detection finished.Left standby data length:12
+2018-10-09 15:02:56,396 (SpawnPoolWorker-2 pid:25256) line-74  Detector <detect_stable> - [INFO] : Imported the "stable" database' data,length: 208 
+2018-10-09 15:02:56,396 (SpawnPoolWorker-2 pid:25256) line-76  Detector <detect_stable> - [INFO] : Start to detect the high scored data,amount: 208 
+2018-10-09 15:02:56,408 (SpawnPoolWorker-2 pid:25256) line-115  Detector <_detect_stable> - [WARNING] : The high scored proxy: 119.93.152.192:34666 is not that stable now.It's Removed.
+2018-10-09 15:02:56,454 (SpawnPoolWorker-2 pid:25256) line-115  Detector <_detect_stable> - [WARNING] : The high scored proxy: 138.201.130.184:8080 is not that stable now.It's Removed.
+2018-10-09 15:02:57,140 (SpawnPoolWorker-2 pid:25256) line-80  Detector <detect_stable> - [INFO] : Detection finished.Left stable data length:0
+2018-10-09 15:03:14,458 (SpawnPoolWorker-4 pid:24832) line-41  Scanner <run> - [INFO] : Start the validation of the local "standby" database,length : 512 
+2018-10-09 15:03:14,459 (SpawnPoolWorker-4 pid:24832) line-45  Scanner <run> - [INFO] : Start to verify the standby proxy data,amount: 500 
+2018-10-09 15:03:20,031 (SpawnPoolWorker-5 pid:24628) line-49  Validator <run> - [INFO] : Validation finished.Left collected proxies:499
+2018-10-09 15:03:20,338 (SpawnPoolWorker-4 pid:24832) line-88  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 115.85.65.94:8080 
+2018-10-09 15:03:21,158 (SpawnPoolWorker-4 pid:24832) line-88  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 43.252.158.107:8080 
+2018-10-09 15:03:25,032 (SpawnPoolWorker-5 pid:24628) line-43  Validator <run> - [INFO] : Proxies from Collector is detected,length : 499 
+2018-10-09 15:03:25,058 (SpawnPoolWorker-5 pid:24628) line-46  Validator <run> - [INFO] : Start to verify the collected proxy data,amount: 499 
+2018-10-09 15:03:26,775 (SpawnPoolWorker-4 pid:24832) line-88  Rator <mark_fail> - [WARNING] : Deleting unstable proxy: 5.178.217.227:43779 
+2018-10-09 15:03:27,976 (SpawnPoolWorker-4 pid:24832) line-48  Scanner <run> - [INFO] : Local validation finished.Left standby proxies:12

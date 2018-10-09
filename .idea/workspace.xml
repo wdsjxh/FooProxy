@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77e3dd22-c1bc-4fdb-bc60-78b4609789c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APIserver/apiserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/APIserver/apiserver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/crawlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/crawlers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/dbhelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/dbhelper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/rator.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/rator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/scanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/scanner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/components/validator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/DBsettings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/DBsettings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/const/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/const/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/log.error" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/log.text" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/FooProxy$main.coverage" NAME="main Coverage Results" MODIFIED="1539062630960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FooProxy$main.coverage" NAME="main Coverage Results" MODIFIED="1539068511267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FooProxy$apiserver.coverage" NAME="apiserver Coverage Results" MODIFIED="1539010626676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/APIserver" />
     <SUITE FILE_PATH="coverage/FooProxy$dbhelper.coverage" NAME="dbhelper Coverage Results" MODIFIED="1538980093138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Helper" />
     <SUITE FILE_PATH="coverage/FooProxy$workstation.coverage" NAME="workstation Coverage Results" MODIFIED="1538847195567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/const" />
@@ -65,7 +53,7 @@
           <entry key="dummy" value="21" />
           <entry key="error" value="3" />
           <entry key="md" value="145" />
-          <entry key="py" value="18682" />
+          <entry key="py" value="18705" />
           <entry key="text" value="2" />
         </counts>
       </usages-collector>
@@ -73,7 +61,7 @@
         <counts>
           <entry key="Markdown" value="145" />
           <entry key="PLAIN_TEXT" value="252" />
-          <entry key="Python" value="19470" />
+          <entry key="Python" value="19493" />
           <entry key="SQL" value="97" />
         </counts>
       </usages-collector>
@@ -84,20 +72,19 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/APIserver/apiserver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+            <state relative-caret-position="948">
+              <caret line="94" column="27" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
               <folding>
                 <element signature="e#107#120#0" expanded="true" />
                 <element signature="e#1218#2624#0" />
                 <element signature="e#1906#2516#0" />
-                <element signature="e#2650#3460#0" />
                 <element signature="e#2660#2948#0" />
                 <element signature="e#2981#3274#0" />
                 <element signature="e#3311#3608#0" />
                 <element signature="e#3642#3944#0" />
-                <marker date="1539068060900" expanded="true" signature="982:983" ph="..." />
-                <marker date="1539068060900" expanded="true" signature="3462:3463" ph="..." />
-                <marker date="1539068060900" expanded="true" signature="4143:4788" ph="..." />
+                <marker date="1539068590906" expanded="true" signature="982:983" ph="..." />
+                <marker date="1539068590906" expanded="true" signature="3492:3493" ph="..." />
+                <marker date="1539068590906" expanded="true" signature="4173:4818" ph="..." />
               </folding>
             </state>
           </provider>
@@ -383,12 +370,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10127932" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10127932" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.3340564" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.3340564" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.42407808" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -640,20 +627,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/APIserver/apiserver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="948">
+          <caret line="94" column="27" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
           <folding>
             <element signature="e#107#120#0" expanded="true" />
             <element signature="e#1218#2624#0" />
             <element signature="e#1906#2516#0" />
-            <element signature="e#2650#3460#0" />
             <element signature="e#2660#2948#0" />
             <element signature="e#2981#3274#0" />
             <element signature="e#3311#3608#0" />
             <element signature="e#3642#3944#0" />
-            <marker date="1539068060900" expanded="true" signature="982:983" ph="..." />
-            <marker date="1539068060900" expanded="true" signature="3462:3463" ph="..." />
-            <marker date="1539068060900" expanded="true" signature="4143:4788" ph="..." />
+            <marker date="1539068590906" expanded="true" signature="982:983" ph="..." />
+            <marker date="1539068590906" expanded="true" signature="3492:3493" ph="..." />
+            <marker date="1539068590906" expanded="true" signature="4173:4818" ph="..." />
           </folding>
         </state>
       </provider>
