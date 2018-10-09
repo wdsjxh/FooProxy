@@ -48,3 +48,45 @@ KeyError: '_id'
 2018-10-09 19:53:57,660 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
 2018-10-09 19:53:57,661 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
 2018-10-09 19:53:57,661 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 20:09:40,604 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'aiohttp.client_exceptions.ClientOSError'> , msg : [WinError 10054] 远程主机强迫关闭了一个现有的连接。 
+2018-10-09 20:10:30,910 (MainProcess pid:7000) line-1761  flask.app <log_exception> - [ERROR] : Exception on /proxy/anony [GET]
+Traceback (most recent call last):
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\CODE\FooProxy\APIserver\apiserver.py", line 52, in get_proxy_of
+    if proxy: del proxy['_id']
+KeyError: '_id'
+2018-10-09 20:10:34,882 (MainProcess pid:7000) line-1761  flask.app <log_exception> - [ERROR] : Exception on /proxy/anony [GET]
+Traceback (most recent call last):
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\linkin\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "D:\CODE\FooProxy\APIserver\apiserver.py", line 52, in get_proxy_of
+    if proxy: del proxy['_id']
+KeyError: '_id'
+2018-10-09 20:13:37,668 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 20:13:37,669 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 20:13:38,662 (SpawnPoolWorker-3 pid:25584) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 20:15:32,353 (SpawnPoolWorker-5 pid:13924) line-105  Rator <mark_update> - [ERROR] : Error class : <class 'IndexError'> , msg : list index out of range 
+2018-10-09 20:15:32,353 (SpawnPoolWorker-5 pid:13924) line-106  Rator <mark_update> - [ERROR] : Proxy 74.56.151.194:55597  does not in the standby database,skipping...
+2018-10-09 20:23:17,676 (SpawnPoolWorker-4 pid:22564) line-71  Scanner <validate> - [ERROR] : Error class : <class 'concurrent.futures._base.TimeoutError'> , msg :  
+2018-10-09 20:27:00,402 (SpawnPoolWorker-4 pid:22564) line-71  Scanner <validate> - [ERROR] : Error class : <class 'aiohttp.client_exceptions.ClientOSError'> , msg : [WinError 10054] 远程主机强迫关闭了一个现有的连接。 

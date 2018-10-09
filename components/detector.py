@@ -109,7 +109,7 @@ class Detector(object):
             logger.warning(
                 'The high scored proxy: %s had been deleted from the standby database.It\'s unavailable.' % proxy)
         else:
-            if _one_data['success_rate'] < str(STABLE_MIN_RATE * 100) + '%' or _one_data['combo_fail'] >= DELETE_COMBO:
+            if round(float(_one_data['success_rate'].replace('%',''))/100,4) < STABLE_MIN_RATE or _one_data['combo_fail'] >= DELETE_COMBO:
                 self.stableDB.delete(condition)
                 logger.warning(
                     'The high scored proxy: %s is not that stable now.It\'s Removed.' % proxy)
