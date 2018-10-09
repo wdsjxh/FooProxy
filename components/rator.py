@@ -91,8 +91,8 @@ class Rator(object):
                 self.db.update({'ip':ip,'port':port},update_data)
 
     def mark_update(self,data,collected=True):
-        ip      = data['ip']
-        port    = data['port']
+        ip = data['ip']
+        port = data['port']
         proxy = ':'.join([ip,port])
         valid_time = time_to_date(int(time.time()))
         data['valid_time'] = valid_time
@@ -128,5 +128,3 @@ class Rator(object):
             del data['fail_count']
             del data['createdTime']
             self.db.update({'ip':ip,'port':port},data)
-
-

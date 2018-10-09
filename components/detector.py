@@ -5,8 +5,8 @@
     @email   : yooleak@outlook.com
     @date    : 2018-10-07
 """
-import asyncio
 import time
+import asyncio
 import logging
 from gevent                 import monkey
 from components.dbhelper    import Database
@@ -102,7 +102,8 @@ class Detector(object):
         port = data['port']
         proxy = ':'.join([ip,port])
         condition = {'ip':ip,'port':port}
-        _one_data = self.standbyDB.select(condition)[0]
+        res = self.standbyDB.select(condition)
+        _one_data = res[0] if res else None
         if not bool(_one_data):
             self.stableDB.delete(condition)
             logger.warning(
@@ -115,14 +116,4 @@ class Detector(object):
             else:
                 del _one_data['_id']
                 self.stableDB.update(condition,data)
-
-
-
-
-
-
-
-
-
-
 

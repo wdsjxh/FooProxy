@@ -34,11 +34,9 @@ normal_stable       = [i for i in all_stable_proxy if i['anony_type']=='透明']
 def index():
     return 'Welcome to the FooProxy API server homepage.'
 
-@app.route('/proxy')
-@app.route('/proxy/')
 @app.route('/proxy/<string:kind>/')
 @app.route('/proxy/<string:kind>')
-def get_proxy(kind='anony'):
+def get_proxy_of(kind='anony'):
     if kind=='anony':
         try:
             proxy = get_a_stable_anonymous()
@@ -70,6 +68,31 @@ def get_proxy(kind='anony'):
     else:
         logger.error('No type named:%s in the proxy types.' % kind)
         return json.dumps({})
+
+@app.route('/proxy')
+@app.route('/proxy/')
+def get_proxy():
+    global  all_stable_proxy
+    global  all_standby_proxy
+    if all_stable_proxy:
+        proxy = all_stable_proxy.pop()
+    else:
+        all_stable_proxy = stable_db.all()
+        try:
+            proxy = all_stable_proxy.pop()
+        except Exception as e:
+            logger.error('No data in stable database.Wait for a while.')
+            logger.info('Popped a proxy from standby database instead.')
+            if all_standby_proxy:
+                proxy = all_standby_proxy.pop()
+            else:
+                all_standby_proxy = standby_db.all()
+                try:
+                    proxy = all_standby_proxy.pop()
+                except Exception as e:
+                    logger.error('No data in standby database.Wait for a while.')
+                    proxy = {}
+    return json.dumps(proxy)
 
 def get_a_stable_anonymous():
     global anony_stable

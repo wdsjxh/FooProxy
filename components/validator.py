@@ -79,8 +79,3 @@ class Validator(object):
                           'fail_count':0,'createdTime':'','combo_success':1,'combo_fail':0,
                           'success_rate':'','stability':0.00}
                 self.rator.mark_success(bullet)
-
-
-
-
-

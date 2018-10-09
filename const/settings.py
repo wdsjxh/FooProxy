@@ -8,11 +8,11 @@
 import random
 
 #代理ip验证可用性验证接口
-proxy_validate_url = 'http://www.moguproxy.com/proxy/checkIp/ipList?ip_ports%5B%5D={}%3A{}'
+proxy_validate_url 	= 'http://www.moguproxy.com/proxy/checkIp/ipList?ip_ports%5B%5D={}%3A{}'
 #ip地址查询接口:url+ip
-IP_check_url = 'https://ip.cn/index.php?ip='
+IP_check_url 		= 'https://ip.cn/index.php?ip='
 #采集器内置爬虫采集地址
-builtin_crawl_urls = {
+builtin_crawl_urls 	= {
     #count 表示爬取数量
     'nyloner':{
         'url':'https://www.nyloner.cn/proxy',
@@ -67,7 +67,7 @@ FAIL_BASIC 		= 5
 #成功一次增加的基本分
 SUCCESS_BASIC 	= 0.1
 #日志配置文件路径
-LOG_CONF = 'log/log.conf'
+LOG_CONF 		= 'log/log.conf'
 #运行模式函数映射
 RUN_FUNC = {
     'Collector' : 'run_collector',

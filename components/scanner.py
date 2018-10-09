@@ -78,7 +78,3 @@ class Scaner(object):
                         self.rator.mark_update(proxy, collected=False)
                     else:
                         self.rator.mark_fail(proxy)
-
-
-
-
