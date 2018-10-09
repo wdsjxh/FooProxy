@@ -19,7 +19,6 @@ logger = logging.getLogger('Rator')
 class Rator(object):
     def __init__(self,db):
         self.raw_filter     = set()
-        self.delete_filter  = set()
         self.local_data     = []
         self.db             = db
 
@@ -87,12 +86,7 @@ class Rator(object):
             if (_count >= 100 and _success_rate <= str(MIN_SUCCESS_RATE*100)+'%') or \
                     _score < 0:
                 logger.warning('Deleting unstable proxy: %s '%proxy)
-                try:
-                    self.raw_filter.remove(proxy)
-                except KeyError as e:
-                    logger.error('Error class : %s , msg : %s ' % (e.__class__, e))
                 self.db.delete({'ip':ip,'port':port})
-                self.delete_filter.add(proxy)
             else:
                 self.db.update({'ip':ip,'port':port},update_data)
 

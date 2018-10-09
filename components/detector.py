@@ -23,7 +23,6 @@ monkey.patch_socket()
 logger = logging.getLogger('Detector')
 
 class Detector(object):
-    """此模块没有进行pymysql支持"""
     def __init__(self):
         self.standbyDB  = Database(_DB_SETTINGS)
         self.stableDB   = Database(_DB_SETTINGS)
@@ -113,6 +112,9 @@ class Detector(object):
                 self.stableDB.delete(condition)
                 logger.warning(
                     'The high scored proxy: %s is not that stable now.It\'s Removed.' % proxy)
+            else:
+                del _one_data['_id']
+                self.stableDB.update(condition,data)
 
 
 
