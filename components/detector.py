@@ -115,5 +115,5 @@ class Detector(object):
                     'The high scored proxy: %s is not that stable now.It\'s Removed.' % proxy)
             else:
                 del _one_data['_id']
-                self.stableDB.update(condition,data)
+                self.stableDB.update(condition,_one_data)
 
